@@ -33,7 +33,6 @@
         box-shadow: 1px 0px 18px -7px grey;
         background-color: rgba(39, 39, 39, 0.650);
         color: #fff;
-
         .title {
             margin: auto 0px;
             margin-left: 20px;
@@ -65,7 +64,7 @@
         top: 5px;
         left: 0;
         background: rgb(255, 230, 0);
-        transition: ease .2s;
+        transition: ease .5s;
         z-index: -1;
     }
     .nav-bar nav ul li:hover::before {
