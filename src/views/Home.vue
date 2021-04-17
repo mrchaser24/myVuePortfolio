@@ -7,10 +7,6 @@
                 <div class="poly-back3"></div>
                 <img src="../assets/images/Home/intro-logo2.jpg" class="person-me" alt="">
             </div>
-            <!-- <div class="arrow">
-                <div class="arrow1"></div>
-                <div class="arrow2"></div>
-            </div> -->
             <div class="my-name">
                 <h2>My name is</h2>
                 <h1>Chase Arcos</h1>
@@ -21,6 +17,12 @@
                     <div class="box2"></div>
                     <a class="cv-btn" href="../assets/CV/CV.pdf" download="Chase CV">Download CV</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="about-me">
+            <div class="title">
+                <h1>About Me</h1>
             </div>
         </div>
         <Footer />
@@ -50,19 +52,19 @@ export default {
         padding: 0px;
     }
     .main-page {
-        min-height: 200vh;
+        min-height: 300vh;
         margin: 0px;
         padding: 0%;
         position: relative;
     }
     /* Intro Part Start */
-    .main-page .intro {
+    .intro {
         background-image: url('../assets/images/Home/old-black-room.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100vh;
-        // position: relative;
+        user-select: none;
         .poly-back {
             position: relative;
             .person-me {
@@ -93,28 +95,10 @@ export default {
                 background-color: rgba(194, 194, 194);
             }
         }
-        // .arrow {
-        //     :hover{
-        //         cursor: pointer;
-        //     }
-        //     position: relative;
-        //     .arrow1, .arrow2 {
-        //         position: absolute;
-        //         background-color: gold;
-        //         left: 500px;
-        //         top: 30vh;
-        //         height: 300px;
-        //         width: 150px;
-        //         clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-        //     }
-        //     .arrow2 {
-        //         left: 650px;
-        //     }
-        // }
         .my-name {
             position: absolute;
-            top: 20vh;
-            right: 10vh; 
+            top: 25vh;
+            right: 10vh;
             text-align: right;
             color: #fff;
 
@@ -136,8 +120,10 @@ export default {
                     text-decoration: none;
                     font-weight: bold;
                     transition: ease .5s;
-                    background-color: #fff;
-                    color: #000;
+                    background-color: transparent;
+                    border: 2px solid #fff;
+                    
+                    color: #fff;
                     position: absolute;
                     right: 0;
                     top: 0;
@@ -146,47 +132,76 @@ export default {
                 .cv-btn:hover {
                     background-color: rgb(255, 230, 0);
                     color: #000;
+                    border: 2px solid rgb(255, 230, 0);
                 }
 
                 .box1 {
                     height: 42px;
                     width: 153px;
-                    text-decoration: none;
-                    font-weight: bold;
-                    transition: ease .5s;
-                    background-color: #fff;
-                    color: #000;
+                    background-color: transparent;
                     position: absolute;
                     top: 0px;
                     right: 0px;
                     border-radius: 2px;
+                    transition: ease .5s;
                 }
 
                 .box2 {
                     height: 42px;
                     width: 153px;
-                    text-decoration: none;
-                    font-weight: bold;
-                    transition: ease .5s;
-                    background-color: rgba(255, 255, 255, 0.356);
-                    color: #000;
+                    background-color: transparent;
                     position: absolute;
                     top: 0px;
                     right: 0px;
-                    border-radius: 2px;
+                    border-radius: 3px;
+                    transition: ease .5s;
                 }
             }
             .btn:hover{
                 .box1{
                     top: -8px;
-                    right: 15px;
+                    right: 18px;
+                    background-color: rgb(216, 216, 216);
                 }
                 .box2{
-                    top: 8px;
+                    top: 12px;
                     right: -10px;
+                    background-color: rgba(194, 194, 194, 0.562);
                 }
             } 
         }
     }
     /* Intro Part End */
+
+    
+    /* About Me Part Start */
+    .about-me {
+        min-height: 100vh;
+
+        .title {
+            user-select: none;
+            ::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -15px;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(216, 216, 216);
+                border-radius: 3px;
+                z-index: -1;
+            }
+
+            text-align: left;
+            margin: 80px 40px;
+            color: #000;
+            padding: 6px 15px;
+            background-color: rgb(255, 230, 0);
+            width: fit-content;
+            border-radius: 3px;
+            box-shadow: 15px 10px 0px rgb(194, 194, 194);
+            position: relative;
+        }
+    }
+    /* About Me Part End */
 </style>
