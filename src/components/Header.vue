@@ -6,8 +6,8 @@
         <div class="nav-bar">
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>About Me</li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#aboutMe">About Me</a></li>
                     <li>Skills</li>
                     <li>Blogs</li>
                     <li>Projects</li>
@@ -48,10 +48,14 @@
         margin: auto 10px;
         list-style: none;
         cursor: pointer;
-        font-size: 18px;
-        position: relative;
         z-index: 10;
-        text-shadow: -2px 2px 2px rgb(22, 22, 22);
+        position: relative;
+        a{
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            text-shadow: -2px 2px 2px rgb(22, 22, 22);
+        }
     }
     .nav-bar nav ul li:hover{
         color: white;

@@ -1,7 +1,7 @@
 <template>
     <div class="main-page">
         <Header />
-        <div class="intro">
+        <div class="intro" id="home">
             <div class="poly-back">
                 <div class="poly-back2"></div>
                 <div class="poly-back3"></div>
@@ -11,7 +11,7 @@
                 <h2>My name is</h2>
                 <h1>Chase Arcos</h1>
                 <h1>Hermosisima</h1>
-                <h2>Software Engineer</h2>
+                <h2> {{ titles[count] }} </h2>
                 <div class="btn">
                     <div class="box1"></div>
                     <div class="box2"></div>
@@ -20,9 +20,19 @@
             </div>
         </div>
 
-        <div class="about-me">
+        <div class="about-me" id="aboutMe">
             <div class="title">
                 <h1>About Me</h1>
+            </div>
+            <div class="about-me-content">
+                <div class="left-side">
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem ipsum dolor sit.</p>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                    <p>Lorem, ipsum dolor.</p>
+                    <!-- <p v-for="item, ind in titles" :key="ind">{{ titlesFunc(ind) }}</p> -->
+                </div>
+                <div class="right-side"></div>
             </div>
         </div>
         <Footer />
@@ -37,8 +47,29 @@ export default {
     components: {
         Header,
         Footer,
+    },
+    data() {
+        return{
+            titles:[
+                "Software Engineer",
+                "Game Developer",
+                "Teakwondo Instructor",
+
+            ],
+            count:0,
+        }
+    },
+    methods:{
+        titlesFunc: function() {
+            this.count++;
+            return this.count > 2 ? this.count = 0 : this.titles[this.count];
+        }
+    },
+    mounted(){
+        setInterval(()=>this.titlesFunc(), 5000);
     }
 }
+
 </script>
 
 <style scoped lang="less">
@@ -173,11 +204,10 @@ export default {
     }
     /* Intro Part End */
 
-    
     /* About Me Part Start */
     .about-me {
         min-height: 100vh;
-
+        
         .title {
             user-select: none;
             ::before {
@@ -193,7 +223,7 @@ export default {
             }
 
             text-align: left;
-            margin: 80px 40px;
+            // margin: 80px 40px;
             color: #000;
             padding: 6px 15px;
             background-color: rgb(255, 230, 0);
