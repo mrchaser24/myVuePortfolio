@@ -1,7 +1,7 @@
 <template>
     <div class="main-page">
         <Header />
-        <div class="intro" id="home">
+        <section class="intro" id="home">
             <div class="poly-back">
                 <div class="poly-back2"></div>
                 <div class="poly-back3"></div>
@@ -18,9 +18,16 @@
                     <a class="cv-btn" href="../assets/CV/CV.pdf" download="Chase CV">Download CV</a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="about-me" id="aboutMe">
+        <section class="quote">
+            <div class="quote-content">
+                <h2>"If there's a problem,</h2>
+                <h2>then there's always a solution"</h2>
+            </div>
+        </section>
+
+        <section class="about-me" id="aboutMe">
             <div class="spacings"></div>
             <div class="title">
                 <h1>About Me</h1>
@@ -32,15 +39,11 @@
                     <p>I enjoy building small businesses to a very interactive app.</p>
                     <p>I'm also a <span>Teakwondo assistant instructor</span> at Montalban.</p>
                 </div>
-                <div class="right-side">
+                <!-- <div class="right-side">
                     <img src="../assets/images/Home/intro-img.png" alt="a laptop with small people">
-                </div>
+                </div> -->
             </div>
-            <div class="quote">
-                <h2>"If there's a problem,</h2>
-                <h2>then there's always a solution"</h2>
-            </div>
-        </div>
+        </section>
         <Footer />
     </div>
 </template>
@@ -209,12 +212,27 @@ export default {
         }
     }
     /* Intro Part End */
-
+    .quote {
+        min-height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .quote-content{
+            margin: 40px 0;
+            h2 {
+                padding: 5px;
+                color: black;
+            }
+        }
+    }
     /* About Me Part Start */
     .about-me {
+        background-image: url('../assets/images/Home/old-black-room.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         min-height: 100vh;
         margin: 0;
-        background-color: rgb(248, 248, 248);
 
         .spacings{
             margin-bottom: 80px;
@@ -235,7 +253,7 @@ export default {
             }
 
             text-align: center;
-            margin: 0px auto;
+            margin: 0px auto 30px;
             color: #fff;
             padding: 6px 15px;
             background-color: rgb(39, 39, 39);
@@ -246,24 +264,19 @@ export default {
 
         .about-me-content{
             user-select: none;
-            display: flex;
             min-height: 50vh;
-            justify-content: space-between;
-            align-items: center;
             .left-side {
-                text-align: center;
                 width: 100%;
                 p {
-                    text-align: left;
+                    margin: auto;
+                    text-align: center;
                     padding: 2px 5px;
-                    margin-left: 5em;
                     margin-bottom: 10px;
                     color: #000;
                     font-size: 1em;
-                    // text-shadow: 1px 1px black;
                     background-color:  rgb(255, 230, 0);
                     width: fit-content;
-                    box-shadow: 10px 5px 0px black;
+                    box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
                     letter-spacing: 0.5px;
 
                     span {
@@ -271,21 +284,12 @@ export default {
                     }
                 }
             }
-            .right-side {
-                img {
-                    filter: grayscale(100%);
-                    width: 100%;
-                }
-            }
-        }
-
-        .quote{
-            margin: 40px 0;
-            padding: 50px 0px 100px;
-            h2 {
-                padding: 5px;
-                color: black;
-            }
+            // .right-side {
+            //     img {
+            //         filter: grayscale(100%);
+            //         width: 100%;
+            //     }
+            // }
         }
     }
     /* About Me Part End */
