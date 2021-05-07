@@ -21,18 +21,24 @@
         </div>
 
         <div class="about-me" id="aboutMe">
+            <div class="spacings"></div>
             <div class="title">
                 <h1>About Me</h1>
             </div>
             <div class="about-me-content">
                 <div class="left-side">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit.</p>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem, ipsum dolor.</p>
-                    <!-- <p v-for="item, ind in titles" :key="ind">{{ titlesFunc(ind) }}</p> -->
+                    <p>Hi! I'm Chase Arcos Hermosisima, {{age}} years old.</p>
+                    <p>I'm a Software Engineer from Quezon City, Philippines.</p>
+                    <p>I enjoy building small businesses to a very interactive app.</p>
+                    <p>I'm also a Teakwondo assistant instructor at Montalban.</p>
                 </div>
-                <div class="right-side"></div>
+                <div class="right-side">
+                    <img src="../assets/images/Home/about-me/introduction-image.png" alt="a laptop with small people">
+                </div>
+            </div>
+            <div class="quote">
+                <h2>"If there's a problem,</h2>
+                <h2>then there's always a solution"</h2>
             </div>
         </div>
         <Footer />
@@ -50,13 +56,13 @@ export default {
     },
     data() {
         return{
+            count:0,
+            age:24,
             titles:[
                 "Software Engineer",
                 "Game Developer",
                 "Teakwondo Instructor",
-
             ],
-            count:0,
         }
     },
     methods:{
@@ -66,7 +72,7 @@ export default {
         }
     },
     mounted(){
-        setInterval(()=>this.titlesFunc(), 5000);
+        setInterval(()=>this.titlesFunc(), 3000);
     }
 }
 
@@ -207,6 +213,13 @@ export default {
     /* About Me Part Start */
     .about-me {
         min-height: 100vh;
+        margin: 0;
+        // background-color: rgb(192, 192, 192);
+
+        .spacings{
+            margin-bottom: 80px;
+            padding:5px;
+        }
         
         .title {
             user-select: none;
@@ -218,19 +231,52 @@ export default {
                 width: 100%;
                 height: 100%;
                 background-color: rgb(216, 216, 216);
-                border-radius: 3px;
                 z-index: -1;
             }
 
-            text-align: left;
-            // margin: 80px 40px;
-            color: #000;
+            text-align: center;
+            margin: 0px auto;
+            color: #fff;
             padding: 6px 15px;
-            background-color: rgb(255, 230, 0);
+            background-color: #000;
             width: fit-content;
-            border-radius: 3px;
-            box-shadow: 15px 10px 0px rgb(194, 194, 194);
+            box-shadow: 15px 10px 0px rgb(255, 230, 0);
             position: relative;
+        }
+
+        .quote{
+            // margin-top: 40px;
+            h2 {
+                padding: 5px;
+                color: black;
+            }
+        }
+
+        .about-me-content{
+            display: flex;
+            min-height: 50vh;
+            justify-content: space-between;
+            align-items: center;
+            .left-side {
+                text-align: center;
+                width: 100%;
+                p {
+                    text-align: center;
+                    padding: 2px 5px;
+                    margin: 0 auto;
+                    margin-bottom: 10px;
+                    color: #fff;
+                    background-color: black;
+                    width: fit-content;
+                    box-shadow: 10px 5px 0px rgb(255, 230, 0);
+                }
+            }
+            .right-side {
+                width: 100%;
+                p {
+                    padding: 5px;
+                }
+            }
         }
     }
     /* About Me Part End */
