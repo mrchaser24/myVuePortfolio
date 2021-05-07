@@ -38,6 +38,7 @@
             margin-left: 20px;
             cursor: pointer;
             font-size: 12px;
+            user-select: none;
         }
         .nav-bar nav ul{
             display: flex;

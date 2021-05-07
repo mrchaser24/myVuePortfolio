@@ -27,13 +27,13 @@
             </div>
             <div class="about-me-content">
                 <div class="left-side">
-                    <p>Hi! I'm Chase Arcos Hermosisima, {{age}} years old.</p>
-                    <p>I'm a Software Engineer from Quezon City, Philippines.</p>
+                    <p>Hi! I'm <span>Chase Arcos Hermosisima</span>, {{age}} years old.</p>
+                    <p>I'm a <span>Software Engineer</span> from Quezon City, Philippines.</p>
                     <p>I enjoy building small businesses to a very interactive app.</p>
-                    <p>I'm also a Teakwondo assistant instructor at Montalban.</p>
+                    <p>I'm also a <span>Teakwondo assistant instructor</span> at Montalban.</p>
                 </div>
                 <div class="right-side">
-                    <img src="../assets/images/Home/about-me/introduction-image.png" alt="a laptop with small people">
+                    <img src="../assets/images/Home/intro-img.png" alt="a laptop with small people">
                 </div>
             </div>
             <div class="quote">
@@ -214,7 +214,7 @@ export default {
     .about-me {
         min-height: 100vh;
         margin: 0;
-        // background-color: rgb(192, 192, 192);
+        background-color: rgb(248, 248, 248);
 
         .spacings{
             margin-bottom: 80px;
@@ -238,21 +238,14 @@ export default {
             margin: 0px auto;
             color: #fff;
             padding: 6px 15px;
-            background-color: #000;
+            background-color: rgb(39, 39, 39);
             width: fit-content;
-            box-shadow: 15px 10px 0px rgb(255, 230, 0);
+            // box-shadow: 15px 10px 0px #000;
             position: relative;
         }
 
-        .quote{
-            // margin-top: 40px;
-            h2 {
-                padding: 5px;
-                color: black;
-            }
-        }
-
         .about-me-content{
+            user-select: none;
             display: flex;
             min-height: 50vh;
             justify-content: space-between;
@@ -261,21 +254,37 @@ export default {
                 text-align: center;
                 width: 100%;
                 p {
-                    text-align: center;
+                    text-align: left;
                     padding: 2px 5px;
-                    margin: 0 auto;
+                    margin-left: 5em;
                     margin-bottom: 10px;
-                    color: #fff;
-                    background-color: black;
+                    color: #000;
+                    font-size: 1em;
+                    // text-shadow: 1px 1px black;
+                    background-color:  rgb(255, 230, 0);
                     width: fit-content;
-                    box-shadow: 10px 5px 0px rgb(255, 230, 0);
+                    box-shadow: 10px 5px 0px black;
+                    letter-spacing: 0.5px;
+
+                    span {
+                        font-weight: bold;
+                    }
                 }
             }
             .right-side {
-                width: 100%;
-                p {
-                    padding: 5px;
+                img {
+                    filter: grayscale(100%);
+                    width: 100%;
                 }
+            }
+        }
+
+        .quote{
+            margin: 40px 0;
+            padding: 50px 0px 100px;
+            h2 {
+                padding: 5px;
+                color: black;
             }
         }
     }
