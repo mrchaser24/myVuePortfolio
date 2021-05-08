@@ -27,6 +27,7 @@
             </div>
         </section>
 
+        <!-- about me part -->
         <section class="about-me" id="aboutMe">
             <div class="spacings"></div>
             <div class="title">
@@ -38,15 +39,66 @@
                     <p>I'm a <span>Software Engineer</span> from Quezon City, Philippines.</p>
                     <p>I enjoy building small businesses to a very interactive app.</p>
                     <p>I'm also a <span>Teakwondo assistant instructor</span> at Montalban.</p>
-                    <p>I made a team of developer with my friends we focus on game development,</p>
-                    <p>and this one below is our logo I created myself.</p>
+                    <p>I made a team of developer with my friends we focus on</p>
+                    <p><span>Game Development</span>, and this one below is our logo.</p>
                 </div>
                 <div class="bottom-side">
                     <img src="../assets/images/Home/CodiTiers.png" alt="Coditiers Logo">
                 </div>
             </div>
         </section>
+        <section class="about-me2">
+            <div class="left-side">
+                <div class="top-side">
+                    <h2>I'M CHASE ARCOS HERMOSISIMA</h2>
+                    <h3>A <span>Web Developer</span> based in <span>Philippines</span></h3>
+                </div>
+                <div class="middle-side">
+                    <div class="box-left">
+                        <div class="info">
+                            <p><span>Birthday:</span></p>
+                            <p>May 18,1997</p>
+                        </div>
+                        <div class="info">
+                            <p><span>Age:</span></p>
+                            <p>{{ ageCount() }} years old</p>
+                        </div>
+                        <div class="info">
+                            <p><span>Residence:</span></p>
+                            <p>Philippines</p>
+                        </div>
+                        <div class="info">
+                            <p><span>Address:</span></p>
+                            <p>38 Bignay St. Proj.2, Quezon City</p>
+                        </div>
+                    </div>
+                    <div class="box-right">
+                        <div class="info">
+                            <p><span>Email:</span></p>
+                            <p>chilitomatohero@gmail.com</p>
+                        </div>
+                        <div class="info">
+                            <p><span>Contect #:</span></p>
+                            <p>(+63)915-899-1818</p>
+                        </div>
+                        <div class="info">
+                            <p><span>Gender:</span></p>
+                            <p>Male</p>
+                        </div>
+                        <div class="info">
+                            <p><span>Freelance:</span></p>
+                            <p>Available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bot"></div>
+            </div>
 
+            <div class="right-side">
+                <img src="" alt="my picture">
+            </div>
+        </section>
+        <!-- about me part -->
         
         <section class="skills" id="mySkills">
             <div class="title">
@@ -231,6 +283,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+
         .quote-content{
             margin: 40px 0;
             h2 {
@@ -241,15 +294,16 @@ export default {
     }
     /* About Me Part Start */
     .about-me {
-        background-image: url('../assets/images/Home/desk-black.png');
+        background-image: url('../assets/images/Home/desk-black1980.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: fixed;
         min-height: 100vh;
         margin: 0;
 
         .spacings{
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             padding:5px;
         }
         
@@ -270,9 +324,9 @@ export default {
             margin: 0px auto 30px;
             color: #fff;
             padding: 6px 15px;
-            background-color: rgb(39, 39, 39);
+            background: linear-gradient(75deg, rgb(104, 104, 104) 10%, rgb(39, 39, 39) 100%, rgb(104, 104, 104) 10%);
             width: fit-content;
-            // box-shadow: 15px 10px 0px #000;
+            box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
             position: relative;
         }
 
@@ -285,7 +339,7 @@ export default {
                     margin: auto;
                     text-align: center;
                     padding: 2px 5px;
-                    margin-bottom: 10px;
+                    margin-bottom: 11px;
                     color: #000;
                     font-size: 1em;
                     background-color:  rgb(255, 230, 0);
@@ -308,7 +362,59 @@ export default {
                 }
             }
         }
+    }
 
+    /***not finish yet
+    *more work
+    *needed here
+    *rest now
+    */
+    .about-me2 {
+        user-select: none;
+        min-height: 70vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #000;
+        .left-side {
+            width: 100%;
+            padding: 0px 10px 0px 100px;
+            .top-side {
+                width: 100%;
+                text-align: left;
+                margin-bottom: 30px;
+                h2 {
+                    margin-bottom: 5px;
+                }
+                h3 {
+                    span {
+                        color: #000;
+                        padding: 2px;
+                        background-color: rgb(255, 230, 0);
+                        box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
+                    }
+                }
+            }
+            .middle-side {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .info {
+                    display: flex;
+                    border-bottom: 1px solid rgba(189, 189, 189, 0.432);
+                    padding: 10px 0px 20px;
+                    p {
+                        margin-left: 5px;
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+        .right-side {
+            width: 100%;
+        }
     }
     /* About Me Part End */
 

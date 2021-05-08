@@ -31,7 +31,7 @@
         min-width: 100%;
         z-index: 10;
         box-shadow: 1px 0px 18px -7px grey;
-        background-color: rgba(39, 39, 39, 0.650);
+        background: linear-gradient(90deg, rgba(104, 104, 104, 0.5) 10%, rgb(39, 39, 39, 0.5) 100%);
         color: #fff;
         .title {
             margin: auto 0px;
