@@ -33,15 +33,24 @@
                 <h1>About Me</h1>
             </div>
             <div class="about-me-content">
-                <div class="left-side">
-                    <p>Hi! I'm <span>Chase Arcos Hermosisima</span>, {{age}} years old.</p>
+                <div class="top-side">
+                    <p>Hi! I'm <span>Chase Arcos Hermosisima</span>, {{ageCount()}} years old.</p>
                     <p>I'm a <span>Software Engineer</span> from Quezon City, Philippines.</p>
                     <p>I enjoy building small businesses to a very interactive app.</p>
                     <p>I'm also a <span>Teakwondo assistant instructor</span> at Montalban.</p>
+                    <p>I made a team of developer with my friends we focus on game development,</p>
+                    <p>and this one below is our logo I created myself.</p>
                 </div>
-                <!-- <div class="right-side">
-                    <img src="../assets/images/Home/intro-img.png" alt="a laptop with small people">
-                </div> -->
+                <div class="bottom-side">
+                    <img src="../assets/images/Home/CodiTiers.png" alt="Coditiers Logo">
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="skills" id="mySkills">
+            <div class="title">
+                <h1>My Skills</h1>
             </div>
         </section>
         <Footer />
@@ -60,7 +69,7 @@ export default {
     data() {
         return{
             count:0,
-            age:24,
+            age:0,
             titles:[
                 "Software Engineer",
                 "Game Developer",
@@ -72,6 +81,11 @@ export default {
         titlesFunc: function() {
             this.count++;
             return this.count > 2 ? this.count = 0 : this.titles[this.count];
+        },
+        ageCount(){
+            let d = new Date();
+            this.age = d.getFullYear() - 1997;
+            return this.age;
         }
     },
     mounted(){
@@ -227,7 +241,7 @@ export default {
     }
     /* About Me Part Start */
     .about-me {
-        background-image: url('../assets/images/Home/old-black-room.jpg');
+        background-image: url('../assets/images/Home/desk-black.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -265,7 +279,7 @@ export default {
         .about-me-content{
             user-select: none;
             min-height: 50vh;
-            .left-side {
+            .top-side {
                 width: 100%;
                 p {
                     margin: auto;
@@ -284,13 +298,23 @@ export default {
                     }
                 }
             }
-            // .right-side {
-            //     img {
-            //         filter: grayscale(100%);
-            //         width: 100%;
-            //     }
-            // }
+            .bottom-side {
+                text-align: center;
+                padding: 20px 0;
+                img {
+                    margin: 60px 0;
+                    height: 400px;
+                    width: 650px;
+                }
+            }
         }
+
     }
     /* About Me Part End */
+
+    // My Skills start
+    .skills {
+        min-height: 100vh;
+    }
+    // My Skills end
 </style>
