@@ -91,7 +91,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="bot"></div>
+                <div class="bot-side">
+                    <a class="fbook" href="https://www.facebook.com/ChiroKero/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a class="git" href="https://github.com/mrchaser24" target="_blank"><i class="fab fa-github-square"></i></a>
+                    <a class="lin" href="https://www.linkedin.com/in/chase-arcus-hermosisima-2a13141ab/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
 
             <div class="right-side">
@@ -410,6 +414,39 @@ export default {
                             font-weight: bold;
                         }
                     }
+                }
+            }
+            .bot-side {
+                text-align: left;
+                margin-top: 20px;
+                a {
+                    position: relative;
+                    
+                    ::before {
+                        content: "";
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgb(28, 175, 224);
+                    }
+                    
+                    color: #000;
+                    margin: 0 5px;
+                    font-size: 32px;
+                }
+                .fbook:hover {
+                    color: #3b5998;
+                    transition: .2s ease;
+                }
+                .git:hover {
+                    color: #211f1f;
+                    transition: .2s ease;
+                }
+                .lin:hover {
+                    color: #0077b5;
+                    transition: .2s ease;
                 }
             }
         }
