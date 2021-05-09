@@ -15,7 +15,7 @@
                 <div class="btn">
                     <div class="box1"></div>
                     <div class="box2"></div>
-                    <a class="cv-btn" href="../assets/CV/CV.pdf" download="Chase CV">Download CV</a>
+                    <a class="cv-btn" :href="`${publicPath}cv/CV.pdf`" download="Chase_CV">Download CV</a>
                 </div>
             </div>
         </section>
@@ -122,6 +122,7 @@ export default {
         return{
             count:0,
             age:0,
+            publicPath: process.env.BASE_URL,
             titles:[
                 "Software Engineer",
                 "Game Developer",
