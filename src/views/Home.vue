@@ -99,7 +99,9 @@
             </div>
 
             <div class="right-side">
-                <img src="" alt="my picture">
+                <div class="skewered">
+                    <img src="../assets/images/Home/person-me-2.jpg" alt="my picture">
+                </div>
             </div>
         </section>
         <!-- about me part -->
@@ -107,6 +109,11 @@
         <section class="skills" id="mySkills">
             <div class="title">
                 <h1>My Skills</h1>
+            </div>
+            <div class="skill-content">
+                <div class="cards">
+
+                </div>
             </div>
         </section>
         <Footer />
@@ -132,6 +139,62 @@ export default {
                 "Game Developer",
                 "Teakwondo Instructor",
             ],
+            skillCard: [
+                {
+                    name:"HTML",
+                    imgSrc:"",
+                    exp:"75",
+                    desc:"",
+                },
+                {
+                    name:"CSS",
+                    imgSrc:"",
+                    exp:"75",
+                    desc:"",
+                },
+                {
+                    name:"JavaScript",
+                    imgSrc:"",
+                    exp:"60",
+                    desc:"",
+                },
+                {
+                    name:"VueJS",
+                    imgSrc:"",
+                    exp:"50",
+                    desc:"",
+                },
+                {
+                    name:"Less",
+                    imgSrc:"",
+                    exp:"50",
+                    desc:"",
+                },
+                {
+                    name:"MySQL",
+                    imgSrc:"",
+                    exp:"40",
+                    desc:"",
+                },
+                {
+                    name:"Express",
+                    imgSrc:"",
+                    exp:"30",
+                    desc:"",
+                },
+                {
+                    name:"PHP",
+                    imgSrc:"",
+                    exp:"30",
+                    desc:"",
+                },
+                {
+                    name:"Laravel",
+                    imgSrc:"",
+                    exp:"10",
+                    desc:"",
+                },
+            ]
         }
     },
     methods:{
@@ -170,12 +233,12 @@ export default {
     }
     /* Intro Part Start */
     .intro {
+        user-select: none;
         background-image: url('../assets/images/Home/old-black-room.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100vh;
-        user-select: none;
         .poly-back {
             position: relative;
             .person-me {
@@ -188,7 +251,7 @@ export default {
             .poly-back2 {
                 content: '';
                 position: absolute;
-                left: 11vh;
+                left: 75px;
                 top: 13vh;
                 height: 76vh;
                 width: 89.80vh;
@@ -198,7 +261,7 @@ export default {
             .poly-back3 {
                 content: '';
                 position: absolute;
-                left: 13vh;
+                left: 85px;
                 top: 18vh;
                 height: 76vh;
                 width: 89.80vh;
@@ -284,6 +347,7 @@ export default {
     }
     /* Intro Part End */
     .quote {
+        user-select: none;
         min-height: 40vh;
         display: flex;
         justify-content: center;
@@ -291,7 +355,12 @@ export default {
 
         .quote-content{
             margin: 40px 0;
+            padding: 20px 30px;
+            background-color: rgb(255, 230, 0);
+            box-shadow: 15px 10px 0px rgba(194, 194, 194, 0.562);
+            transform: skew(15deg);
             h2 {
+                transform: skew(-15deg);
                 padding: 5px;
                 color: black;
             }
@@ -369,20 +438,20 @@ export default {
         }
     }
 
-    /***not finish yet
-    *more work
-    *needed here
-    *rest now
-    */
     .about-me2 {
+        // background-image: url('../assets/images/Home/blood-splatbnw.jpg');
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
         user-select: none;
-        min-height: 70vh;
+        min-height: 100vh;
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: #000;
+        border-bottom: 1px solid rgba(223, 223, 223, 0.438);
         .left-side {
-            width: 100%;
+            width: 50%;
             padding: 0px 10px 0px 100px;
             .top-side {
                 width: 100%;
@@ -404,12 +473,16 @@ export default {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
+                .box-right {
+                    margin-left: 10px;
+                }
                 .info {
                     display: flex;
                     border-bottom: 1px solid rgba(189, 189, 189, 0.432);
                     padding: 10px 0px 20px;
                     p {
-                        margin-left: 5px;
+                        // margin-left: 5px;
+                        letter-spacing: .3px;
                         span{
                             font-weight: bold;
                         }
@@ -418,7 +491,7 @@ export default {
             }
             .bot-side {
                 text-align: left;
-                margin-top: 20px;
+                margin-top: 30px;
                 a {
                     position: relative;
                     
@@ -435,6 +508,7 @@ export default {
                     color: #000;
                     margin: 0 5px;
                     font-size: 32px;
+                    transition: .2s ease;
                 }
                 .fbook:hover {
                     color: #3b5998;
@@ -451,7 +525,20 @@ export default {
             }
         }
         .right-side {
-            width: 100%;
+            width: 50%;
+            height: 100%;
+            .skewered {
+                margin: auto;
+                // transform: skewX(25deg);
+                height: 500px;
+                width: 400px;
+                img {
+                    // transform: skewX(-25deg);
+                    height: 100%;
+                    width: 100%;
+                    box-shadow:  15px 10px 0px rgba(194, 194, 194, 0.562);
+                }
+            }
         }
     }
     /* About Me Part End */
@@ -459,6 +546,9 @@ export default {
     // My Skills start
     .skills {
         min-height: 100vh;
+        display: flex;
+        justify-content: center;
+
     }
     // My Skills end
 </style>

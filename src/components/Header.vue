@@ -8,7 +8,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#aboutMe">About Me</a></li>
-                    <li>Skills</li>
+                    <li><a href="#mySkills">Skills</a></li>
                     <li>Blogs</li>
                     <li>Projects</li>
                 </ul>
@@ -43,55 +43,38 @@
         .nav-bar nav ul{
             display: flex;
             margin-right: 10px;
+            justify-content: space-evenly;
+            li {
+                transform: skewX(0deg);
+                
+                margin: auto 10px;
+                padding: 0px 2px;
+                list-style: none;
+                cursor: pointer;
+                z-index: 10;
+                position: relative;
+                a{
+                    font-size: 18px;
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+            li:hover{
+                transform: skew(10deg);
+                color: white;
+                background: rgb(255, 230, 0);
+                box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
+                transition: ease .2s;
+                a {
+                    color: black;
+                    font-style: italic;
+                }
+            }
         }
-    }
-    .nav-bar nav ul li {
-        margin: auto 10px;
-        list-style: none;
-        cursor: pointer;
-        z-index: 10;
-        position: relative;
-        a{
-            font-size: 18px;
-            text-decoration: none;
-            color: #fff;
-            text-shadow: -2px 2px 2px rgb(22, 22, 22);
-        }
-    }
-    .nav-bar nav ul li:hover{
-        color: white;
-    }
-    .nav-bar nav ul li::before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 20px;
-        top: 5px;
-        left: 0;
-        background: rgb(255, 230, 0);
-        transition: ease .5s;
-        z-index: -1;
-    }
-    .nav-bar nav ul li:hover::before {
-        width: 80%;
-    }
-    .nav-bar nav ul li::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 20px;
-        top: -1px;
-        right: 0;
-        background: black;
-        transition: ease .2s;
-        z-index: -1;
-    }
-    .nav-bar nav ul li:hover::after {
-        width: 80%;
     }
 
     /* WHEN SCROLLING HEADER */
     .scrolled {
-
+        
     }
 </style>

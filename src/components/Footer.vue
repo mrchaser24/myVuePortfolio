@@ -42,7 +42,7 @@
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
     .footer-content {
         padding: 20px;
         background: rgb(39, 39, 39);
@@ -50,66 +50,55 @@
         bottom: 0;
         left: 0;
         min-width: 100%;
-    }
-    .logo {
-        text-align: center;
-        width: fit-content;
-        margin: auto;
-    }
-    .logo h1{
-        font-size: 64px;
-        margin: 10px 0 20px;
-        color: #fff;
-        text-shadow: -2px 2px 2px rgb(22, 22, 22);
-        text-transform: uppercase;
-        position: relative;
-        z-index: 10;
-    }
-    .logo h1::before {
-        content: "";
-        position: absolute;
-        width: 80%;
-        height: 60px;
-        top: 20px;
-        left: -10px;
-        background: rgb(255, 230, 0);
-        transition: ease .2s;
-        z-index: -1;
-    }
-    .logo h1::after {
-        content: "";
-        position: absolute;
-        width: 80%;
-        height: 60px;
-        top: -5px;
-        right: -10px;
-        background: black;
-        transition: ease .2s;
-        z-index: -1;
-    }
-
-
-    .nav-bar{
-        display: flex;
-        justify-content: space-evenly;
-        color: #fff;
-    }
-    .footer-content .nav-bar .links ul{
-        margin:0;
-        padding:0;
-    }
-    .footer-content .nav-bar .links ul li{
-        list-style: none;
-        cursor: pointer;
-        margin: 5px 0;
-    }
-    .copyrights {
-        margin-top: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.041);
-    }
-    .copyrights p{
-        color: #fff;
-        margin: 0;
-        margin-top: 20px;
+        .logo {
+            text-align: center;
+            width: fit-content;
+            margin: auto;
+            h1{
+                font-size: 64px;
+                margin: 10px 0 20px;
+                color: #fff;
+                text-shadow: -2px 2px 2px rgb(22, 22, 22);
+                text-transform: uppercase;
+                position: relative;
+                z-index: 10;
+            }
+            h1::before {
+                content: "";
+                position: absolute;
+                width: 110%;
+                height: 100%;
+                left: -8px;
+                top: 0;
+                background: rgb(255, 230, 0);
+                box-shadow: 15px 10px 0px rgba(194, 194, 194, 0.562);
+                transition: ease .2s;
+                z-index: -1;
+                transform: skewX(20deg);
+            }
+        }
+        .nav-bar{
+            display: flex;
+            justify-content: space-evenly;
+            color: #fff;
+            .links ul{
+                margin:0;
+                padding:0;
+                li{
+                    list-style: none;
+                    cursor: pointer;
+                    margin: 5px 0;
+                }
+            }
+        }
+        .copyrights {
+            margin-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.041);
+            p{
+                color: #fff;
+                margin: 0;
+                margin-top: 20px;
+            }
+        }
     }
 </style>
