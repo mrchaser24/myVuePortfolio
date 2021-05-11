@@ -216,6 +216,9 @@ export default {
 </script>
 
 <style scoped lang="less">
+    // TABLET SIZE SCREEN
+    @tablet:    ~"only screen and (min-width: 360px) and (max-width: 959px)";
+
     * {
         box-sizing: border-box;
         margin: 0px;
@@ -273,6 +276,7 @@ export default {
             position: absolute;
             top: 25vh;
             right: 10vh;
+            width: 100%;
             text-align: right;
             color: #fff;
 
@@ -342,7 +346,89 @@ export default {
                     right: -10px;
                     background-color: rgba(194, 194, 194, 0.562);
                 }
-            } 
+            }
+        }
+        @media @tablet {
+            
+            .my-name {
+                position: absolute;
+                top: 30vh;
+                right: 0px;
+                text-align: right;
+                margin: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 10px 0px 0px 10px;
+                width: fit-content;
+                padding-right: 20px;
+                padding-bottom: 50px;
+                h1 {
+                    font-size: 50px;
+                    color: #fff;
+                    text-shadow: 4px 3px 0px #000;
+                    position: relative; 
+                    z-index: 1;
+                    text-align: right;
+                    margin: 15px auto;
+                    // width: fit-content;
+                }
+                h2 {
+                    font-size: 25px;
+                    color: #fff;
+                    text-shadow: 4px 3px 0px #000;
+                    position: relative; 
+                    z-index: 1;
+                    text-align: right;
+                    // width: fit-content;
+                    margin: 15px auto;
+                }
+                // h1::after{
+                //         content: "";
+                //         position: absolute;
+                //         height: 100%;
+                //         width: 105%;
+                //         top: 0px;
+                //         left: -8px;
+                //         transform: skewX(15deg);
+                //         background-color: rgb(255, 230, 0);
+                //         box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
+                //         z-index: -1;
+                // }
+                // h2::after{
+                //         content: "";
+                //         position: absolute;
+                //         height: 100%;
+                //         width: 110%;
+                //         top: 0px;
+                //         left: -8px;
+                //         transform: skewX(15deg);
+                //         background-color: rgb(255, 230, 0);
+                //         box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
+                //         z-index: -1;
+                // }
+                .btn{
+                    margin: 0 auto;
+                    .cv-btn {
+                        // background-color: rgb(255, 230, 0);
+                        color: #000;
+                        border: none;
+                        position: relative;
+                        top: 20px;
+                        z-index: 1;
+                    }
+                    .cv-btn::after {
+                        content: "";
+                        position: absolute;
+                        height: 100%;
+                        width: 110%;
+                        top: 0px;
+                        left: -8px;
+                        transform: skewX(15deg);
+                        background-color: rgb(255, 230, 0);
+                        box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
+                        z-index: -1;
+                    }
+                }
+            }
         }
     }
     /* Intro Part End */
@@ -538,6 +624,16 @@ export default {
                     width: 100%;
                     box-shadow:  15px 10px 0px rgba(194, 194, 194, 0.562);
                 }
+            }
+        }
+        @media @tablet {
+            justify-content: center;
+            .left-side {
+                width: 90%;
+                padding: 0px;
+            }
+            .right-side {
+                display:none;
             }
         }
     }
