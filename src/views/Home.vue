@@ -523,6 +523,11 @@ export default {
             }
         }
     }
+    @media @tablet {
+        .about-me {
+            background-image: url('../assets/images/Home/desk-black800.png');
+        }
+    }
 
     .about-me2 {
         // background-image: url('../assets/images/Home/blood-splatbnw.jpg');
