@@ -7,7 +7,14 @@
                 <div class="poly-back3"></div>
                 <img src="../assets/images/Home/intro-logo2.jpg" class="person-me" alt="">
             </div>
-            <div class="my-name">
+            <div class="my-name"  data-aos="fade-left"
+                    data-aos-offset="100"
+                    data-aos-delay="50"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                    data-aos-mirror="true"
+                    data-aos-once="true"
+                    data-aos-anchor-placement="top-center">
                 <h2>My name is</h2>
                 <h1>Chase Arcos</h1>
                 <h1>Hermosisima</h1>
@@ -20,7 +27,16 @@
             </div>
         </section>
 
-        <section class="quote">
+        <section class="quote"
+            data-aos="fade-up"
+            data-aos-offset="100"
+            data-aos-delay="10"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            data-aos-anchor-placement="top"
+        >
             <div class="quote-content">
                 <h2>"If there's a problem,</h2>
                 <h2>then there's always a solution"</h2>
@@ -34,7 +50,7 @@
                 <h1>About Me</h1>
             </div>
             <div class="about-me-content">
-                <div class="top-side">
+                <div class="top-side" data-aos="zoom-in-down">
                     <p>Hi! I'm <span>Chase Arcos Hermosisima</span>, {{ageCount()}} years old.</p>
                     <p>I'm a <span>Software Engineer</span> from Quezon City, Philippines.</p>
                     <p>I enjoy building small businesses to a very interactive app.</p>
@@ -47,8 +63,43 @@
                 </div>
             </div>
         </section>
+
+        <!-- Skills start -->
+        <section class="skills" id="mySkills">
+            <div class="title">
+                <h1>My Skills</h1>
+            </div>
+            <div class="skill-content">
+                <vueper-slides
+                    class="no-shadow"
+                    :visible-slides="3"
+                    slide-multiple
+                    :gap="5"
+                    autoplay
+                    :slide-ratio="1 / 4"
+                    :dragging-distance="1"
+                    :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
+                    :pause-on-hover="pauseOnHover"
+                    :bullets="false"
+                >
+                    <!-- :arrows="false" -->
+                    <vueper-slide 
+                        class="card" 
+                        v-for="i in skillCard" 
+                        :key="i.id" 
+                        :image="i.imgSrc" 
+                    />
+                        <!-- :title="i.name.toString()" 
+                        :content="i.desc" -->
+                </vueper-slides>
+            </div>
+        </section>
+        <!-- Skills end -->
+
         <section class="about-me2">
-            <div class="left-side">
+            <div class="left-side" 
+                data-aos="fade-up-right"
+                data-aos-anchor-placement="top-center">
                 <div class="top-side">
                     <h2>I'M CHASE ARCOS HERMOSISIMA</h2>
                     <h3>A <span>Web Developer</span> based in <span>Philippines</span></h3>
@@ -98,7 +149,10 @@
                 </div>
             </div>
 
-            <div class="right-side">
+            <div class="right-side"  
+                data-aos="fade-up-left"
+                data-aos-anchor-placement="top-center"
+                >
                 <div class="skewered">
                     <img src="../assets/images/Home/person-me-2.jpg" alt="my picture">
                 </div>
@@ -106,17 +160,9 @@
         </section>
         <!-- about me part -->
         
-        <section class="skills" id="mySkills">
-            <div class="title">
-                <h1>My Skills</h1>
-            </div>
-            <div class="skill-content">
-                <div class="cards">
-
-                </div>
-            </div>
-        </section>
-        <Footer />
+        <div class="footer">
+            <Footer />
+        </div>
     </div>
 </template>
 
@@ -124,16 +170,22 @@
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
+
 export default {
     components: {
         Header,
         Footer,
+        VueperSlides,
+        VueperSlide,
     },
     data() {
         return{
             count:0,
             age:0,
             publicPath: process.env.BASE_URL,
+            pauseOnHover: true,
             titles:[
                 "Software Engineer",
                 "Game Developer",
@@ -141,58 +193,64 @@ export default {
             ],
             skillCard: [
                 {
+                    id:1,
                     name:"HTML",
-                    imgSrc:"",
-                    exp:"75",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/HTML.png'),
+                    desc:"<p>75</p><p>Lorem ipsum dolor sit amet.</p>",
                 },
                 {
+                    id:2,
                     name:"CSS",
-                    imgSrc:"",
-                    exp:"75",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/CSS.png'),
+                    desc:"<p>75</p>",
                 },
                 {
+                    id:3,
                     name:"JavaScript",
-                    imgSrc:"",
-                    exp:"60",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/JavaScript.png'),
+                    desc:"<p>60</p>",
                 },
                 {
+                    id:4,
+                    name:"TypeScript",
+                    imgSrc: require('@/assets/images/Home/my-skills/TypeScript.png'),
+                    desc:"<p>60</p>",
+                },
+                {
+                    id:5,
                     name:"VueJS",
-                    imgSrc:"",
-                    exp:"50",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/VueJS.png'),
+                    desc:"<p>50</p>",
                 },
                 {
+                    id:6,
                     name:"Less",
-                    imgSrc:"",
-                    exp:"50",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/Less.png'),
+                    desc:"<p>50</p>",
                 },
                 {
+                    id:7,
                     name:"MySQL",
-                    imgSrc:"",
-                    exp:"40",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/MySQL.png'),
+                    desc:"<p>40</p>",
                 },
                 {
+                    id:8,
                     name:"Express",
-                    imgSrc:"",
-                    exp:"30",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/ExpressJS.png'),
+                    desc:"<p>30</p>",
                 },
                 {
+                    id:9,
                     name:"PHP",
-                    imgSrc:"",
-                    exp:"30",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/PHP.png'),
+                    desc:"<p>30</p>",
                 },
                 {
+                    id:10,
                     name:"Laravel",
-                    imgSrc:"",
-                    exp:"10",
-                    desc:"",
+                    imgSrc: require('@/assets/images/Home/my-skills/Laravel.png'),
+                    desc:"<p>10</p>",
                 },
             ]
         }
@@ -529,21 +587,49 @@ export default {
         }
     }
 
+
+    // My Skills start
+    .skills {
+        min-height: 60vh;
+        padding-top: 80px;
+        .title {
+            // margin-top: 40px;
+        }
+        .skill-content {
+            padding: 0px 0px 5vh;
+            width: 80%;
+            margin: auto;
+            .card {
+                border: 1px solid rgb(184, 184, 184);
+                margin: 20px 0px;
+                border-radius: 10px;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    // My Skills end
+
     .about-me2 {
-        // background-image: url('../assets/images/Home/blood-splatbnw.jpg');
-        // background-position: center;
-        // background-repeat: no-repeat;
-        // background-size: cover;
+        background-image: url('../assets/images/Home/network-mainboard1980.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
         user-select: none;
         min-height: 100vh;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         color: #000;
         border-bottom: 1px solid rgba(223, 223, 223, 0.438);
         .left-side {
             width: 50%;
-            padding: 0px 10px 0px 100px;
+            padding: 30px;
+            margin-left: 100px;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 10px 10px 0px rgba(223, 223, 223, 0.438);
             .top-side {
                 width: 100%;
                 text-align: left;
@@ -631,25 +717,28 @@ export default {
                 }
             }
         }
-        @media @tablet {
+    }
+    @media @tablet {
+            
+        .about-me2 {
+            background-image: url('../assets/images/Home/network-mainboard800.png');
             justify-content: center;
+            
             .left-side {
                 width: 90%;
-                padding: 0px;
+                margin: 0px;
             }
             .right-side {
                 display:none;
             }
         }
+        
     }
     /* About Me Part End */
-
+    
     // My Skills start
-    .skills {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-
+    .footer {
+        min-height: 50vh;
     }
     // My Skills end
 </style>

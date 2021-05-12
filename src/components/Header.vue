@@ -8,9 +8,9 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#aboutMe">About Me</a></li>
-                    <li><a href="#mySkills">Skills</a></li>
-                    <li>Blogs</li>
-                    <li>Projects</li>
+                    <!-- <li><a href="#mySkills">Skills</a></li> -->
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Projects</a></li>
                 </ul>
             </nav>
         </div>
