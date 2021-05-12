@@ -34,7 +34,6 @@
             data-aos-duration="500"
             data-aos-easing="ease-in-out"
             data-aos-mirror="true"
-            data-aos-once="true"
             data-aos-anchor-placement="top"
         >
             <div class="quote-content">
@@ -50,7 +49,7 @@
                 <h1>About Me</h1>
             </div>
             <div class="about-me-content">
-                <div class="top-side" data-aos="zoom-in-down">
+                <div class="top-side" data-aos="zoom-in-up">
                     <p>Hi! I'm <span>Chase Arcos Hermosisima</span>, {{ageCount()}} years old.</p>
                     <p>I'm a <span>Software Engineer</span> from Quezon City, Philippines.</p>
                     <p>I enjoy building small businesses to a very interactive app.</p>
@@ -58,7 +57,7 @@
                     <p>I made a team of developer with my friends we focus on</p>
                     <p><span>Game Development</span>, and this one below is our logo.</p>
                 </div>
-                <div class="bottom-side">
+                <div class="bottom-side"  data-aos="zoom-in-down">
                     <img src="../assets/images/Home/CodiTiers.png" alt="Coditiers Logo">
                 </div>
             </div>
