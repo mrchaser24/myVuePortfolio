@@ -46,9 +46,9 @@
     .footer-content {
         padding: 20px;
         background: rgb(39, 39, 39);
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        // position: absolute;
+        // bottom: 0;
+        // left: 0;
         min-width: 100%;
         .logo {
             text-align: center;

@@ -1,6 +1,7 @@
 <template>
     <div class="main-page">
         <Header />
+        <!-- intro start -->
         <section class="intro" id="home">
             <div class="poly-back">
                 <div class="poly-back2"></div>
@@ -26,7 +27,9 @@
                 </div>
             </div>
         </section>
+        <!-- intro end -->
 
+        <!-- quote start -->
         <section class="quote"
             data-aos="fade-up"
             data-aos-offset="100"
@@ -41,8 +44,9 @@
                 <h2>then there's always a solution"</h2>
             </div>
         </section>
+        <!-- quote end -->
 
-        <!-- about me part -->
+        <!-- about me 1st start -->
         <section class="about-me" id="aboutMe">
             <div class="spacings"></div>
             <div class="title">
@@ -62,6 +66,7 @@
                 </div>
             </div>
         </section>
+        <!-- about me 1st end -->
 
         <!-- Skills start -->
         <section class="skills" id="mySkills">
@@ -95,6 +100,8 @@
         </section>
         <!-- Skills end -->
 
+
+        <!-- about me 2nd start -->
         <section class="about-me2">
             <div class="left-side" 
                 data-aos="fade-up-right"
@@ -157,11 +164,22 @@
                 </div>
             </div>
         </section>
-        <!-- about me part -->
-        
-        <div class="footer">
-            <Footer />
-        </div>
+        <!-- about me 2nd end-->
+
+        <!-- Contact me start  -->
+        <section class="contact">
+            <div class="contact-content">
+                <h3> Are you <span>interested?</span></h3>
+                <!-- <h3>Hit the button below!</h3> -->
+                <div class="line"></div>
+                <div class="btn">
+                    <a class="contact-btn" href="#" target="_blank">Contact Me</a>
+                </div>
+            </div>
+        </section>
+        <!-- Contact me end  -->
+
+        <Footer />
     </div>
 </template>
 
@@ -290,8 +308,9 @@ export default {
         margin: 0px;
         padding: 0%;
         position: relative;
+        overflow: hidden;
     }
-    /* Intro Part Start */
+    /* Intro Start */
     .intro {
         user-select: none;
         background-image: url('../assets/images/Home/old-black-room.jpg');
@@ -488,7 +507,7 @@ export default {
             }
         }
     }
-    /* Intro Part End */
+    /* Intro End */
     .quote {
         user-select: none;
         min-height: 40vh;
@@ -509,7 +528,7 @@ export default {
             }
         }
     }
-    /* About Me Part Start */
+    /* About Me 1st Start */
     .about-me {
         background-image: url('../assets/images/Home/desk-black1980.png');
         background-position: center;
@@ -585,14 +604,33 @@ export default {
             background-image: url('../assets/images/Home/desk-black800.png');
         }
     }
-
+    // About Me 1st End 
 
     // My Skills start
     .skills {
-        min-height: 60vh;
-        padding-top: 80px;
+        min-height: 50vh;
+        padding-top: 40px;
         .title {
-            // margin-top: 40px;
+            user-select: none;
+            ::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -15px;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(216, 216, 216);
+                z-index: -1;
+            }
+
+            text-align: center;
+            margin: 0px auto 30px;
+            color: #fff;
+            padding: 6px 15px;
+            background: linear-gradient(75deg, rgb(104, 104, 104) 10%, rgb(39, 39, 39) 100%, rgb(104, 104, 104) 10%);
+            width: fit-content;
+            box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
+            position: relative;
         }
         .skill-content {
             padding: 0px 0px 5vh;
@@ -609,6 +647,7 @@ export default {
     }
     // My Skills end
 
+    // About me 2nd start 
     .about-me2 {
         background-image: url('../assets/images/Home/network-mainboard1980.png');
         background-position: center;
@@ -617,8 +656,9 @@ export default {
         background-attachment: fixed;
         user-select: none;
         min-height: 100vh;
+        width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         color: #000;
         border-bottom: 1px solid rgba(223, 223, 223, 0.438);
@@ -705,13 +745,10 @@ export default {
             height: 100%;
             .skewered {
                 margin: auto;
-                // transform: skewX(25deg);
                 height: 500px;
-                width: 400px;
                 img {
-                    // transform: skewX(-25deg);
                     height: 100%;
-                    width: 100%;
+                    width: 400px;
                     box-shadow:  15px 10px 0px rgba(194, 194, 194, 0.562);
                 }
             }
@@ -733,11 +770,82 @@ export default {
         }
         
     }
-    /* About Me Part End */
-    
-    // My Skills start
-    .footer {
-        min-height: 50vh;
+    /* About me 2nd End */
+
+    // Contact me start
+    .contact {
+        min-height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .contact-content {
+            width: 100%;
+            h3 {
+                color: #000;
+                margin: 10px 0;
+                // letter-spacing: .3px;
+                text-transform: uppercase;
+                span {
+                    color: #000;
+                    padding: 4px 5px;
+                    background-color: rgb(255, 230, 0);
+                    box-shadow: 8px 5px 0px rgba(194, 194, 194, 0.562);
+                }
+            }
+            // .line {
+            //     width: 100%;
+            //     border-bottom: 1px solid rgb(80, 80, 80);
+            //     height: 5vh;
+            // }
+            .btn{
+                margin-top: 20px;
+                padding-top: 5vh;
+                .contact-btn {
+                    ::before {
+                        content: "";
+                        position: absolute;
+                        left: 0px;
+                        top: -10px;
+                        height: 100%;
+                        width: 100%;
+                        background-color: grey;
+                    }
+                    position: relative;
+                    padding: 12px 2vw;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: ease .5s;
+                    background-color: transparent;
+                    border: 2px solid #000;
+                    
+                    color: #000;
+                    border-radius: 5px;
+                }
+                .contact-btn:hover {
+                    background-color: rgb(255, 230, 0);
+                    color: #000;
+                    border: 2px solid rgb(255, 230, 0);
+                    box-shadow: 10px 6px 0px rgb(194, 194, 194);
+                }
+                .contact-btn::after {
+                    content: "";
+                    position: absolute;
+                    transition: ease .5s;
+                    border-radius: 5px;
+                    left: 0px;
+                    top: 0px;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(216, 216, 216, 0);
+                    z-index: -1;
+                }
+                .contact-btn:hover::after {
+                    left: -12px;
+                    top: -8px;
+                    background-color: rgb(216, 216, 216);
+                }
+            }
+        }
     }
-    // My Skills end
+    // Contact me end
 </style>
