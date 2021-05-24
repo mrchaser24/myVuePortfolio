@@ -100,7 +100,6 @@
         </section>
         <!-- Skills end -->
 
-
         <!-- about me 2nd start -->
         <section class="about-me2">
             <div class="left-side" 
@@ -173,7 +172,7 @@
                 <!-- <h3>Hit the button below!</h3> -->
                 <div class="line"></div>
                 <div class="btn">
-                    <a class="contact-btn" href="#" target="_blank">Contact Me</a>
+                    <a class="contact-btn" @click.prevent="$router.push({name:'Contact'})" >Contact Me</a>
                 </div>
             </div>
         </section>
@@ -304,7 +303,7 @@ export default {
         padding: 0px;
     }
     .main-page {
-        min-height: 300vh;
+        // min-height: 300vh;
         margin: 0px;
         padding: 0%;
         position: relative;
@@ -810,6 +809,7 @@ export default {
                         width: 100%;
                         background-color: grey;
                     }
+                    cursor: pointer;
                     position: relative;
                     padding: 12px 2vw;
                     text-decoration: none;
@@ -817,21 +817,20 @@ export default {
                     transition: ease .5s;
                     background-color: transparent;
                     border: 2px solid #000;
-                    
                     color: #000;
-                    border-radius: 5px;
+                    border-radius: 3px;
                 }
                 .contact-btn:hover {
                     background-color: rgb(255, 230, 0);
                     color: #000;
                     border: 2px solid rgb(255, 230, 0);
-                    box-shadow: 10px 6px 0px rgb(194, 194, 194);
+                    box-shadow: 10px 6px 0px rgb(172, 172, 172);
                 }
                 .contact-btn::after {
                     content: "";
                     position: absolute;
                     transition: ease .5s;
-                    border-radius: 5px;
+                    border-radius: 3px;
                     left: 0px;
                     top: 0px;
                     height: 100%;

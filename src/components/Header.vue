@@ -1,16 +1,15 @@
 <template>
     <div class="header-content">
         <div class="title">
-            <h1>CHASE</h1>
+            <h1 @click="$router.push({ name: 'Home' })">CHASE</h1>
         </div>
         <div class="nav-bar">
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#aboutMe">About Me</a></li>
-                    <!-- <li><a href="#mySkills">Skills</a></li> -->
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a @click="$router.push({ name: 'Home' })">Home</a></li>
+                    <li><a @click="$router.push({ name: 'Blog' })">Blogs</a></li>
+                    <li><a @click="$router.push({ name: 'Project' })">Projects</a></li>
+                    <li><a @click="$router.push({ name: 'Contact' })">Contact</a></li>
                 </ul>
             </nav>
         </div>
