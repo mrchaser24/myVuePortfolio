@@ -557,9 +557,9 @@ export default {
 
             text-align: center;
             margin: 0px auto 30px;
-            color: #fff;
+            color: #000;
             padding: 6px 15px;
-            background: linear-gradient(75deg, rgb(104, 104, 104) 10%, rgb(39, 39, 39) 100%, rgb(104, 104, 104) 10%);
+            background: rgb(255, 230, 0);
             width: fit-content;
             box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
             position: relative;
@@ -624,9 +624,9 @@ export default {
 
             text-align: center;
             margin: 0px auto 30px;
-            color: #fff;
+            color: #000;
             padding: 6px 15px;
-            background: linear-gradient(75deg, rgb(104, 104, 104) 10%, rgb(39, 39, 39) 100%, rgb(104, 104, 104) 10%);
+            background: rgb(255, 230, 0);
             width: fit-content;
             box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
             position: relative;

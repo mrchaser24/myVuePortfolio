@@ -44,6 +44,7 @@
 
 <style lang="less" scoped>
     .footer-content {
+        user-select: none;
         padding: 20px;
         background: rgb(39, 39, 39);
         // position: absolute;

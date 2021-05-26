@@ -7,7 +7,9 @@
                     <h1>Contact Me</h1>
                 </div>
                 <div class="container">
-                    <div class="left-side box">left</div>
+                    <div class="left-side box">
+                        
+                    </div>
                     <div class="right-side box">right</div>
                 </div>
             </div>
@@ -55,6 +57,12 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        background-image: url('../../assets/images/contact/cityscape-view1980.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         
         .contact-content {
             .title {
@@ -71,16 +79,22 @@
                 // }
                 text-align: center;
                 margin: 0px auto 30px;
-                color: #fff;
+                color: #000;
                 padding: 6px 15px;
-                background: linear-gradient(75deg, rgb(104, 104, 104) 10%, rgb(39, 39, 39) 100%, rgb(104, 104, 104) 10%);
+                background: rgb(255, 230, 0);
                 width: fit-content;
                 box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
                 position: relative;
             }
             .container {
                 display: flex;
-                justify-content: center;
+                justify-content: space-evenly;
+                background-color: #fff;
+                padding: 25px;
+                width: fit-content;
+                margin: auto;
+                border-radius: 3px;
+                box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
             }
         }
     }
