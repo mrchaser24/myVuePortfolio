@@ -1,8 +1,10 @@
 <template>
   <div class="main-page">
       <Header/>
-      <div class="content">
+      <div class="content"  v-for="item in getProjectList" :key="item.title">
           <h1>WELCOME TO PROJECT PAGE</h1>
+          <p>{{ item.title }}</p><br/>
+          <p>{{ item.description }}</p>
       </div>
       <Footer/>
   </div>
@@ -11,12 +13,22 @@
 <script>
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import {mapGetters} from 'vuex';
 
 export default {
     components: {
         Header,
         Footer
-    }
+    },
+    data() {
+        return{
+            showProjectList: []
+        }
+    },
+    computed: {
+        ...mapGetters(["getProjectList"])
+    },
+    mounted(){}
 }
 </script>
 

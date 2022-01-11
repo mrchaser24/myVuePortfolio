@@ -8,7 +8,9 @@
                 </div>
                 <div class="container">
                     <div class="left-side box">
-                        
+                        <form action="" method="post">
+                            
+                        </form>
                     </div>
                     <div class="right-side box">right</div>
                 </div>
