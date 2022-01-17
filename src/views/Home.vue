@@ -89,7 +89,7 @@
                     <!-- :arrows="false" -->
                     <vueper-slide 
                         class="card" 
-                        v-for="i in skillCard" 
+                        v-for="i in getSkillList" 
                         :key="i.id" 
                         :image="i.imgSrc" 
                     />
@@ -188,6 +188,7 @@ import Footer from '../components/Footer.vue';
 
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
+import {mapGetters} from 'vuex';
 
 export default {
     components: {
@@ -207,69 +208,10 @@ export default {
                 "Game Developer",
                 "Teakwondo Instructor",
             ],
-            skillCard: [
-                {
-                    id:1,
-                    name:"HTML",
-                    imgSrc: require('@/assets/images/Home/my-skills/HTML.png'),
-                    desc:"<p>75</p><p>Lorem ipsum dolor sit amet.</p>",
-                },
-                {
-                    id:2,
-                    name:"CSS",
-                    imgSrc: require('@/assets/images/Home/my-skills/CSS.png'),
-                    desc:"<p>75</p>",
-                },
-                {
-                    id:3,
-                    name:"JavaScript",
-                    imgSrc: require('@/assets/images/Home/my-skills/JavaScript.png'),
-                    desc:"<p>60</p>",
-                },
-                {
-                    id:4,
-                    name:"TypeScript",
-                    imgSrc: require('@/assets/images/Home/my-skills/TypeScript.png'),
-                    desc:"<p>60</p>",
-                },
-                {
-                    id:5,
-                    name:"VueJS",
-                    imgSrc: require('@/assets/images/Home/my-skills/VueJS.png'),
-                    desc:"<p>50</p>",
-                },
-                {
-                    id:6,
-                    name:"Less",
-                    imgSrc: require('@/assets/images/Home/my-skills/Less.png'),
-                    desc:"<p>50</p>",
-                },
-                {
-                    id:7,
-                    name:"MySQL",
-                    imgSrc: require('@/assets/images/Home/my-skills/MySQL.png'),
-                    desc:"<p>40</p>",
-                },
-                {
-                    id:8,
-                    name:"Express",
-                    imgSrc: require('@/assets/images/Home/my-skills/ExpressJS.png'),
-                    desc:"<p>30</p>",
-                },
-                {
-                    id:9,
-                    name:"PHP",
-                    imgSrc: require('@/assets/images/Home/my-skills/PHP.png'),
-                    desc:"<p>30</p>",
-                },
-                {
-                    id:10,
-                    name:"Laravel",
-                    imgSrc: require('@/assets/images/Home/my-skills/Laravel.png'),
-                    desc:"<p>10</p>",
-                },
-            ]
         }
+    },
+    computed:{
+        ...mapGetters(["getSkillList"])
     },
     methods:{
         titlesFunc: function() {
