@@ -159,7 +159,7 @@
                 data-aos-anchor-placement="top-center"
                 >
                 <div class="skewered">
-                    <img src="../assets/images/Home/person-me-2.jpg" alt="my picture">
+                    <img src="../assets/images/Home/person-me-3.jpg" alt="my picture">
                 </div>
             </div>
         </section>
@@ -250,6 +250,7 @@ export default {
         padding: 0%;
         position: relative;
         overflow: hidden;
+        user-select: none;
     }
     /* Intro Start */
     .intro {
@@ -398,30 +399,6 @@ export default {
                     // width: fit-content;
                     margin: 15px auto;
                 }
-                // h1::after{
-                //         content: "";
-                //         position: absolute;
-                //         height: 100%;
-                //         width: 105%;
-                //         top: 0px;
-                //         left: -8px;
-                //         transform: skewX(15deg);
-                //         background-color: rgb(255, 230, 0);
-                //         box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
-                //         z-index: -1;
-                // }
-                // h2::after{
-                //         content: "";
-                //         position: absolute;
-                //         height: 100%;
-                //         width: 110%;
-                //         top: 0px;
-                //         left: -8px;
-                //         transform: skewX(15deg);
-                //         background-color: rgb(255, 230, 0);
-                //         box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
-                //         z-index: -1;
-                // }
                 .btn{
                     margin: 0 auto;
                     .cv-btn {
@@ -688,8 +665,8 @@ export default {
                 margin: auto;
                 height: 500px;
                 img {
-                    height: 100%;
-                    width: 400px;
+                    height: 110%;
+                    // width: 100%;
                     box-shadow:  15px 10px 0px rgba(194, 194, 194, 0.562);
                 }
             }

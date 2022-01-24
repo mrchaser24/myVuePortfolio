@@ -9,24 +9,28 @@ const projList = [
         title: "PanOptik Digital Marketing Inc.",
         description: "A digital marketing inc that helps a business get up and running",
         tools: "HTML5, CSS3, JS, Bootstrap",
+        projImg:  require('@/assets/images/Project/ProjectLogo/panoptik.jpg'),
     },
     {
         id_proj:2,
         title: "Karwaheng Pinoy",
         description: "A delivery app that is similar to Grab and Lalamove",
         tools: "HTML5, CSS3, JS, Bootstrap",
+        projImg:  require('@/assets/images/Project/ProjectLogo/logoyellowbg.jpg'),
     },
     {
         id_proj:3,
         title: "TEST 1",
-        description: "A delivery app that is similar to Grab and Lalamove",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, nesciunt cupiditate iusto deserunt fugiat maiores voluptatum fugit commodi nihil neque nulla, adipisci doloremque, pariatur sequi!",
         tools: "Vue 2",
+        projImg:  require('@/assets/images/Project/ProjectLogo/tkdslide1.jpg'),
     },
     {
         id_proj:4,
         title: "TEST 2",
-        description: "A delivery app that is similar to Grab and Lalamove",
+        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, nesciunt cupiditate iusto deserunt fugiat maiores voluptatum fugit commodi nihil neque nulla, adipisci doloremque, pariatur sequi!",
         tools: "Laravel",
+        projImg: require('@/assets/images/Project/ProjectLogo/tkdslide1.jpg'),
     },
 ];
 

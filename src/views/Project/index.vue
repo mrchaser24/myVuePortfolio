@@ -2,26 +2,20 @@
   <div class="main-page">
       <Header/>
       <div class="content">
-          <h1>WELCOME TO PROJECT PAGE</h1>
+          <h1 class="title">WELCOME TO PROJECT PAGE</h1>
           <div class="project-list invert-project-list" v-for="item in getProjectList" :key="item.title">
-                <div v-if="item.id_proj % 2 == 0">
-                    <div class="left-side">
-                        <img src="" alt="">
+                <div :class = 'invertProjectList(item.id_proj)'>
+                    <div class="left-side"
+                        data-aos="zoom-out-up"
+                        data-aos-anchor-placement="center-bottom">
+                        <img :src="item.projImg" alt="">
                     </div>
-                    <div class="right-side">
-                        <p class="project-title">{{ item.title }}</p>
-                        <p class="project-desc">{{ item.description }}</p>
-                        <p class="project-tools">{{ item.tools }}</p>
-                    </div>
-                </div>
-                <div v-else>
-                    <div class="right-side">
-                        <p class="project-title">{{ item.title }}</p>
-                        <p class="project-desc">{{ item.description }}</p>
-                        <p class="project-tools">{{ item.tools }}</p>
-                    </div>
-                    <div class="left-side">
-                        <img src="" alt="">
+                    <div class="right-side"
+                        data-aos="zoom-out-up"
+                        data-aos-anchor-placement="center-bottom">
+                        <p class="p-title">{{ item.title }}</p>
+                        <p class="p-desc">{{ item.description }}</p>
+                        <p class="p-tools">{{ item.tools }}</p>
                     </div>
                 </div>
           </div>
@@ -33,24 +27,27 @@
 <script>
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+
+// import { VueperSlides, VueperSlide } from 'vueperslides'
+// import 'vueperslides/dist/vueperslides.css'
 import {mapGetters} from 'vuex';
 
 export default {
     components: {
         Header,
-        Footer
+        Footer,
+        // VueperSlides,
+        // VueperSlide,
     },
     data() {
         return{
             showProjectList: [],
-            // listThis:0
         }
     },
     methods: {
-        // invertProjectList(val){
-        //     this.listThis = val
-        //     return val % 2 == 0 ? 
-        // },
+        invertProjectList(val){
+            return val % 2 == 0 ? "dont-invert-this invert-this" : "dont-invert-this" ;
+        },
     },
     computed: {
         ...mapGetters(["getProjectList"]),
@@ -77,45 +74,100 @@ export default {
         padding: 0px;
         position: relative;
         overflow: hidden;
+        user-select: none;
+        background-color: rgb(248, 248, 248);
+        background-image: url('../../assets/images/Home/network-mainboard1980.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
 
     // CONTENT START
     .content {
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         margin-top: 9vh;
+
+        .title {
+            ::before {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: -15px;
+                width: 100%;
+                height: 100%;
+                background-color: rgb(216, 216, 216);
+                z-index: -1;
+            }
+
+            text-align: center;
+            margin: 0px auto 30px;
+            color: #000;
+            padding: 6px 15px;
+            background: rgb(255, 230, 0);
+            width: fit-content;
+            box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
+            position: relative;
+        }
         .project-list {
-            div{
+            min-width: 60%;
+            min-height: 80vh;
+            display: flex;
+            // border-bottom: 1px solid rgba(212, 212, 212, 0.438);
+
+            .dont-invert-this{
+                display: flex;
+                margin: auto;
+                justify-content: space-between;
+                width: 70%;
                 .left-side {
                     min-width: 50%;
-                    justify-content: center;
                     img {
-                        border: 1px solid black;
                         height: 450px;
                         width: 350px;
+                        box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
                     }
                 }
                 .right-side {
                     min-width: 50%;
                     margin: auto;
-                    display: block;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #fff;
+                    border-radius: 25px;
+                    box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
+
                     p {
                         text-align: center;
-                        margin: auto;
-                        padding: 12px 10px;
+                        margin: 2vh auto;
+                        padding: 6px 8px;
+
+                        // text-align: center;
+                        color: #000;
+                        // padding: 6px 15px;
+                        background: rgb(255, 230, 0);
+                        width: 80%;
+                        box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
+                        // position: relative;
+                    }
+                    .p-title {
+                        font-size: 28px;
+                        padding: 6px 18px;
+                        font-weight: bold;
+                        width: fit-content;
+                    }
+                    .p-desc {
+                        font-size: 20px;
+                    }
+                    .p-tools {
+                        font-size: 14px;
+                        width: fit-content;
                     }
                 }
-                display: flex;
-                justify-content: space-between;
-                min-width: 100%;
-                padding: 5vh 0;
             }
-            min-width: 60%;
+            .invert-this {
+                flex-direction: row-reverse;
+            }
         }
-        
     }
-
 </style>
