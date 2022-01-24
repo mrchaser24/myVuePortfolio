@@ -76,7 +76,7 @@ export default {
         overflow: hidden;
         user-select: none;
         background-color: rgb(248, 248, 248);
-        background-image: url('../../assets/images/Home/network-mainboard1980.png');
+        background-image: url('../../assets/images/Project/BackGround/Black-And-White-Laptop-Keyboards.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -158,10 +158,15 @@ export default {
                     }
                     .p-desc {
                         font-size: 20px;
+                        background: none;
+                        box-shadow: none;
+                        margin: auto;
                     }
                     .p-tools {
                         font-size: 14px;
                         width: fit-content;
+                        background: none;
+                        box-shadow: none;
                     }
                 }
             }
