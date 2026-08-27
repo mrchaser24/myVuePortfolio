@@ -94,7 +94,7 @@ const experienceList = [
         company: 'Collabera – Essilor',
         location: 'Alabang, Muntinlupa City',
         role: 'Senior Analyst Programmer',
-        period: 'Sept 2022 – Present',
+        period: 'Sept 2022 – Aug 2026',
         highlights: [
             'Created data models to support decision-making processes.',
             'Developed comprehensive risk management strategies to minimize potential losses and safeguard business interests.',
