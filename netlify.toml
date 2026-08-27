@@ -1,0 +1,23 @@
+# Netlify configuration for the Vue portfolio
+# Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# SPA fallback: serve index.html for all routes so /Projects and /Contact
+# work when accessed directly or when the page is refreshed.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[headers]
+  "/*" = [
+    { key = "X-Content-Type-Options", value = "nosniff" },
+    { key = "X-Frame-Options", value = "SAMEORIGIN" },
+    { key = "Referrer-Policy", value = "strict-origin-when-cross-origin" }
+  ]
