@@ -730,7 +730,7 @@ export default {
   }
 
   .profile__grid {
-    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.82fr);
+    /* grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.82fr); */
     align-items: center;
   }
 
