@@ -11,7 +11,12 @@ import router from './router';
 import Vuex from 'vuex';
 import store from './store.js';
 
-AOS.init();
+AOS.init({
+  duration: 650,
+  easing: 'ease-out-cubic',
+  once: true,
+  disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+});
 Vue.use(Vuex);
 
 Vue.config.productionTip = false

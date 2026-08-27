@@ -1,769 +1,769 @@
 <template>
-    <div class="main-page">
-        <Header />
-        <!-- intro start -->
-        <section class="intro" id="home">
-            <div class="poly-back">
-                <div class="poly-back2"></div>
-                <div class="poly-back3"></div>
-                <img src="../assets/images/Home/intro-logo2.jpg" class="person-me" alt="">
-            </div>
-            <div class="my-name"  data-aos="fade-left"
-                    data-aos-offset="100"
-                    data-aos-delay="50"
-                    data-aos-duration="1000"
-                    data-aos-easing="ease-in-out"
-                    data-aos-mirror="true"
-                    data-aos-once="true"
-                    data-aos-anchor-placement="top-center">
-                <h2>My name is</h2>
-                <h1>Chase Arcos</h1>
-                <h1>Hermosisima</h1>
-                <h2> {{ titles[count] }} </h2>
-                <div class="btn">
-                    <div class="box1"></div>
-                    <div class="box2"></div>
-                    <a class="cv-btn" :href="`${publicPath}cv/CV.pdf`" download="Chase_CV">Download CV</a>
-                </div>
-            </div>
-        </section>
-        <!-- intro end -->
+  <main class="home-page">
+    <Header />
 
-        <!-- quote start -->
-        <section class="quote"
-            data-aos="fade-up"
-            data-aos-offset="100"
-            data-aos-delay="10"
-            data-aos-duration="500"
-            data-aos-easing="ease-in-out"
-            data-aos-mirror="true"
-            data-aos-anchor-placement="top"
-        >
-            <div class="quote-content">
-                <h2>"If there's a problem,</h2>
-                <h2>then there's always a solution"</h2>
-            </div>
-        </section>
-        <!-- quote end -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__overlay"></div>
+      <div class="hero__layout site-container">
+        <div class="hero__content" data-aos="fade-up">
+          <p class="hero__eyebrow">Hello, I’m</p>
+          <h1 id="hero-title">Chase Arcos <span>Hermosisima.</span></h1>
+          <p class="hero__role" aria-live="polite">{{ titles[currentTitle] }}</p>
+          <p class="hero__summary">A senior analyst programmer from Quezon City building practical, interactive web experiences.</p>
+          <div class="hero__actions">
+            <a class="button button--accent" :href="resumePath" download="Chase-Resume-Updated.pdf">
+              Download résumé <i class="fas fa-download" aria-hidden="true"></i>
+            </a>
+            <router-link class="button button--ghost" :to="{ name: 'Project' }">View projects</router-link>
+          </div>
+        </div>
 
-        <!-- about me 1st start -->
-        <section class="about-me" id="aboutMe">
-            <div class="spacings"></div>
-            <div class="title">
-                <h1>About Me</h1>
-            </div>
-            <div class="about-me-content">
-                <div class="top-side" data-aos="zoom-in-up">
-                    <p>Hi! I'm <span>Chase Arcos Hermosisima</span>, {{ageCount()}} years old.</p>
-                    <p>I'm a <span>Software Engineer</span> from Quezon City, Philippines.</p>
-                    <p>I enjoy building small businesses to a very interactive app.</p>
-                    <p>I'm also a <span>Teakwondo assistant instructor</span> at Montalban.</p>
-                    <p>I made a team of developer with my friends we focus on</p>
-                    <p><span>Game Development</span>, and this one below is our logo.</p>
-                </div>
-                <div class="bottom-side"  data-aos="zoom-in-down">
-                    <img src="../assets/images/Home/CodiTiers.png" alt="Coditiers Logo">
-                </div>
-            </div>
-        </section>
-        <!-- about me 1st end -->
+        <div class="hero__portrait-wrap" data-aos="fade-left" data-aos-delay="120">
+          <div class="hero__shape hero__shape--back"></div>
+          <div class="hero__shape hero__shape--accent"></div>
+          <img class="hero__portrait" src="../assets/images/Home/chase.jpg" alt="Chase Arcos Hermosisima" />
+        </div>
+      </div>
+    </section>
 
-        <!-- Skills start -->
-        <section class="skills" id="mySkills">
-            <div class="title">
-                <h1>My Skills</h1>
-            </div>
-            <div class="skill-content">
-                <vueper-slides
-                    class="no-shadow"
-                    :visible-slides="3"
-                    slide-multiple
-                    :gap="5"
-                    autoplay
-                    :slide-ratio="1 / 4"
-                    :dragging-distance="1"
-                    :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
-                    :pause-on-hover="pauseOnHover"
-                    :bullets="false"
-                >
-                    <!-- :arrows="false" -->
-                    <vueper-slide 
-                        class="card" 
-                        v-for="i in getSkillList" 
-                        :key="i.id" 
-                        :image="i.imgSrc" 
-                    />
-                        <!-- :title="i.name.toString()" 
-                        :content="i.desc" -->
-                </vueper-slides>
-            </div>
-        </section>
-        <!-- Skills end -->
+    <section class="quote" aria-label="Personal philosophy">
+      <div class="site-container">
+        <blockquote>“If there’s a problem, then there’s always a solution.”</blockquote>
+      </div>
+    </section>
 
-        <!-- about me 2nd start -->
-        <section class="about-me2">
-            <div class="left-side" 
-                data-aos="fade-up-right"
-                data-aos-anchor-placement="top-center">
-                <div class="top-side">
-                    <h2>I'M CHASE ARCOS HERMOSISIMA</h2>
-                    <h3>A <span>Web Developer</span> based in <span>Philippines</span></h3>
-                </div>
-                <div class="middle-side">
-                    <div class="box-left">
-                        <div class="info">
-                            <p><span>Birthday:</span></p>
-                            <p>May 18,1997</p>
-                        </div>
-                        <div class="info">
-                            <p><span>Age:</span></p>
-                            <p>{{ ageCount() }} years old</p>
-                        </div>
-                        <div class="info">
-                            <p><span>Residence:</span></p>
-                            <p>Philippines</p>
-                        </div>
-                        <div class="info">
-                            <p><span>Address:</span></p>
-                            <p>38 Bignay St. Proj.2, Quezon City</p>
-                        </div>
-                    </div>
-                    <div class="box-right">
-                        <div class="info">
-                            <p><span>Email:</span></p>
-                            <p>chilitomatohero@gmail.com</p>
-                        </div>
-                        <div class="info">
-                            <p><span>Contect #:</span></p>
-                            <p>(+63)915-899-1818</p>
-                        </div>
-                        <div class="info">
-                            <p><span>Gender:</span></p>
-                            <p>Male</p>
-                        </div>
-                        <div class="info">
-                            <p><span>Freelance:</span></p>
-                            <p>Available</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bot-side">
-                    <a class="fbook" href="https://www.facebook.com/ChiroKero/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                    <a class="git" href="https://github.com/mrchaser24" target="_blank"><i class="fab fa-github-square"></i></a>
-                    <a class="lin" href="https://www.linkedin.com/in/chase-arcus-hermosisima-2a13141ab/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
+    <section class="about section section--dark" aria-labelledby="about-title">
+      <div class="site-container about__grid">
+        <SectionHeading
+          id="about-title"
+          eyebrow="About me"
+          title="Curious by nature. Focused on useful work."
+          description="From front-end interfaces to data modeling and DevOps, I build and support software that helps teams make better decisions."
+          light
+          data-aos="fade-up"
+        />
 
-            <div class="right-side"  
-                data-aos="fade-up-left"
-                data-aos-anchor-placement="top-center"
-                >
-                <div class="skewered">
-                    <img src="../assets/images/Home/person-me-3.jpg" alt="my picture">
-                </div>
-            </div>
-        </section>
-        <!-- about me 2nd end-->
+        <div class="about__detail" data-aos="fade-up" data-aos-delay="100">
+          <p>I’m <strong>Chase Arcos Hermosisima</strong>, a senior analyst programmer based in Quezon City, Philippines. My work spans front-end development, back-end services, quality assurance, and DevOps across agencies, startups, and enterprise teams.</p>
+          <p>Outside of work, I stay curious through game development, Arduino and Python learning, airsoft, and Taekwondo.</p>
+          <div class="about__brand">
+            <img src="../assets/images/Home/CodiTiers.png" alt="CodiTiers logo" />
+            <span>Game development collective</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Contact me start  -->
-        <section class="contact">
-            <div class="contact-content">
-                <h3> Are you <span>interested?</span></h3>
-                <!-- <h3>Hit the button below!</h3> -->
-                <div class="line"></div>
-                <div class="btn">
-                    <a class="contact-btn" @click.prevent="$router.push({name:'Contact'})" >Contact Me</a>
-                </div>
-            </div>
-        </section>
-        <!-- Contact me end  -->
+    <section class="skills section" aria-labelledby="skills-title">
+      <div class="site-container">
+        <SectionHeading
+          id="skills-title"
+          eyebrow="Toolkit"
+          title="Skills I bring to the build."
+          description="A practical foundation across front-end development, server-side tools, and data-driven applications."
+          data-aos="fade-up"
+        />
 
-        <Footer />
-    </div>
+        <ul class="skills__grid" aria-label="Technical skills">
+          <li v-for="skill in getSkillList" :key="skill.id" class="skill-card" data-aos="zoom-in" data-aos-anchor-placement="top-bottom">
+            <h3 class="skill-card__title">{{ skill.name }}</h3>
+            <ul class="skill-card__items" aria-label="`${skill.name} skills`">
+              <li v-for="item in skill.items" :key="item">{{ item }}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="experience section" aria-labelledby="experience-title">
+      <div class="site-container">
+        <SectionHeading
+          id="experience-title"
+          eyebrow="Experience"
+          title="Where I’ve worked and grown."
+          description="A track record of building, optimizing, and supporting web applications across startups, agencies, and enterprise teams."
+          data-aos="fade-up"
+        />
+
+        <ol class="timeline">
+          <li v-for="exp in getExperienceList" :key="exp.id" class="timeline__item" data-aos="fade-up">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="timeline__card">
+              <header class="timeline__header">
+                <div>
+                  <h3>{{ exp.role }}</h3>
+                  <p class="timeline__company">{{ exp.company }} · {{ exp.location }}</p>
+                </div>
+                <span class="timeline__period">{{ exp.period }}</span>
+              </header>
+              <ul class="timeline__highlights">
+                <li v-for="highlight in exp.highlights" :key="highlight">{{ highlight }}</li>
+              </ul>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="profile section section--photo" aria-labelledby="profile-title">
+      <div class="site-container profile__grid">
+        <div class="profile__card" data-aos="fade-up">
+          <p class="profile__eyebrow">A little more</p>
+          <h2 id="profile-title">Let’s make something that matters.</h2>
+          <p>I’m available to connect about web projects, thoughtful product ideas, and collaborative work.</p>
+          <dl class="profile__details">
+            <div><dt>Based in</dt><dd>38 Bignay Street, Quezon City, 1102</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:chase.hermosisima@gmail.com">chase.hermosisima@gmail.com</a></dd></div>
+            <div><dt>Phone</dt><dd><a href="tel:+639696474112">(+63) 969-647-4112</a></dd></div>
+          </dl>
+          <div class="profile__socials" aria-label="Social profiles">
+            <a href="https://chaseweb101.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Chase portfolio website"><i class="fas fa-globe" aria-hidden="true"></i></a>
+            <a href="https://github.com/mrchaser24" target="_blank" rel="noopener noreferrer" aria-label="Chase on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/chase-arcus-hermosisima-2a13141ab/" target="_blank" rel="noopener noreferrer" aria-label="Chase on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+          <p class="profile__hobbies"><strong>Beyond the code:</strong> Airsoft, game development, Arduino &amp; Python learning, and Taekwondo.</p>
+        </div>
+
+        <!-- <div class="profile__image-wrap" data-aos="fade-left" data-aos-delay="100">
+          <img src="../assets/images/Home/person-me-3.jpg" alt="Portrait of Chase Arcos Hermosisima" />
+        </div> -->
+      </div>
+    </section>
+
+    <section class="contact-cta section" aria-labelledby="contact-cta-title">
+      <div class="site-container contact-cta__inner" data-aos="fade-up">
+        <div>
+          <p class="contact-cta__eyebrow">Have an idea?</p>
+          <h2 id="contact-cta-title">Let’s start a conversation.</h2>
+        </div>
+        <router-link class="button button--dark" :to="{ name: 'Contact' }">Contact me <i class="fas fa-arrow-right" aria-hidden="true"></i></router-link>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
 </template>
 
 <script>
-import Header from '../components/Header.vue';
+import { mapGetters } from 'vuex';
 import Footer from '../components/Footer.vue';
-
-import { VueperSlides, VueperSlide } from 'vueperslides'
-import 'vueperslides/dist/vueperslides.css'
-import {mapGetters} from 'vuex';
+import Header from '../components/Header.vue';
+import SectionHeading from '../components/SectionHeading.vue';
 
 export default {
-    components: {
-        Header,
-        Footer,
-        VueperSlides,
-        VueperSlide,
+  name: 'Home',
+  components: {
+    Footer,
+    Header,
+    SectionHeading,
+  },
+  data() {
+    return {
+      currentTitle: 0,
+      titleTimer: null,
+      titles: ['Senior Analyst Programmer', 'Fullstack Developer', 'Game Developer'],
+    };
+  },
+  computed: {
+    ...mapGetters(['getSkillList', 'getExperienceList']),
+    resumePath() {
+      return `${process.env.BASE_URL}cv/Chase%20Resume%20-%20Updated.pdf`;
     },
-    data() {
-        return{
-            count:0,
-            age:0,
-            publicPath: process.env.BASE_URL,
-            pauseOnHover: true,
-            titles:[
-                "Software Engineer",
-                "Game Developer",
-                "Teakwondo Instructor",
-            ],
-        }
-    },
-    computed:{
-        ...mapGetters(["getSkillList"])
-    },
-    methods:{
-        titlesFunc: function() {
-            this.count++;
-            return this.count > 2 ? this.count = 0 : this.titles[this.count];
-        },
-        ageCount(){
-            let d = new Date();
-            this.age = d.getFullYear() - 1997;
-            return this.age;
-        }
-    },
-    mounted(){
-        setInterval(()=>this.titlesFunc(), 3000);
-    }
-}
-
+  },
+  mounted() {
+    this.titleTimer = window.setInterval(() => {
+      this.currentTitle = (this.currentTitle + 1) % this.titles.length;
+    }, 3200);
+  },
+  beforeDestroy() {
+    window.clearInterval(this.titleTimer);
+  },
+};
 </script>
 
-<style scoped lang="less">
-    // TABLET SIZE SCREEN
-    @tablet:    ~"only screen and (min-width: 360px) and (max-width: 959px)";
+<style scoped>
+.home-page {
+  background: var(--color-surface);
+}
 
-    * {
-        box-sizing: border-box;
-        margin: 0px;
-        padding: 0px;
-    }
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
-    .main-page {
-        // min-height: 300vh;
-        margin: 0px;
-        padding: 0%;
-        position: relative;
-        overflow: hidden;
-        user-select: none;
-    }
-    /* Intro Start */
-    .intro {
-        user-select: none;
-        background-image: url('../assets/images/Home/old-black-room.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 100vh;
-        .poly-back {
-            position: relative;
-            .person-me {
-                clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-                position: absolute;
-                left: 100px;
-                height: 100vh;
-                top: 0;
-            }
-            .poly-back2 {
-                content: '';
-                position: absolute;
-                left: 75px;
-                top: 13vh;
-                height: 76vh;
-                width: 89.80vh;
-                clip-path: polygon(16.5% 0%, 91.5% 0%, 75% 100%, 0% 100%);
-                background-color: rgba(194, 194, 194, 0.562);
-            }
-            .poly-back3 {
-                content: '';
-                position: absolute;
-                left: 85px;
-                top: 18vh;
-                height: 76vh;
-                width: 89.80vh;
-                clip-path: polygon(16.5% 0%, 91.5% 0%, 75% 100%, 0% 100%);
-                background-color: rgba(194, 194, 194);
-            }
-        }
-        .my-name {
-            position: absolute;
-            top: 25vh;
-            right: 10vh;
-            width: 100%;
-            text-align: right;
-            color: #fff;
+.hero {
+  position: relative;
+  display: grid;
+  min-height: max(43rem, 100svh);
+  overflow: hidden;
+  background: #121419 url('../assets/images/Home/old-black-room.jpg') center / cover no-repeat;
+  color: var(--color-on-dark);
+}
 
-            h1 {
-                font-size: 60px;
-                // text-transform: uppercase;
-                margin-top: 20px;
-            }
-            h2 {
-                font-size: 30px;
-                margin-top: 20px;
-                // text-transform: uppercase;
-            }
-            .btn{
-                margin-top: 20px;
-                position: relative;
-                .cv-btn {
-                    padding: 12px 2vw;
-                    text-decoration: none;
-                    font-weight: bold;
-                    transition: ease .5s;
-                    background-color: transparent;
-                    border: 2px solid #fff;
-                    
-                    color: #fff;
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    border-radius: 2px;
-                }
-                .cv-btn:hover {
-                    background-color: rgb(255, 230, 0);
-                    color: #000;
-                    border: 2px solid rgb(255, 230, 0);
-                }
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 11, 14, 0.94) 0%, rgba(10, 11, 14, 0.76) 45%, rgba(10, 11, 14, 0.2) 100%);
+}
 
-                .box1 {
-                    height: 42px;
-                    width: 153px;
-                    background-color: transparent;
-                    position: absolute;
-                    top: 0px;
-                    right: 0px;
-                    border-radius: 2px;
-                    transition: ease .5s;
-                }
+.hero__layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 3rem;
+}
 
-                .box2 {
-                    height: 42px;
-                    width: 153px;
-                    background-color: transparent;
-                    position: absolute;
-                    top: 0px;
-                    right: 0px;
-                    border-radius: 3px;
-                    transition: ease .5s;
-                }
-            }
-            .btn:hover{
-                .box1{
-                    top: -8px;
-                    right: 18px;
-                    background-color: rgb(216, 216, 216);
-                }
-                .box2{
-                    top: 12px;
-                    right: -10px;
-                    background-color: rgba(194, 194, 194, 0.562);
-                }
-            }
-        }
-        @media @tablet {
-            
-            .my-name {
-                position: absolute;
-                top: 30vh;
-                right: 0px;
-                text-align: right;
-                margin: 0;
-                background-color: rgba(0, 0, 0, 0.5);
-                border-radius: 10px 0px 0px 10px;
-                width: fit-content;
-                padding-right: 20px;
-                padding-bottom: 50px;
-                h1 {
-                    font-size: 50px;
-                    color: #fff;
-                    text-shadow: 4px 3px 0px #000;
-                    position: relative; 
-                    z-index: 1;
-                    text-align: right;
-                    margin: 15px auto;
-                    // width: fit-content;
-                }
-                h2 {
-                    font-size: 25px;
-                    color: #fff;
-                    text-shadow: 4px 3px 0px #000;
-                    position: relative; 
-                    z-index: 1;
-                    text-align: right;
-                    // width: fit-content;
-                    margin: 15px auto;
-                }
-                .btn{
-                    margin: 0 auto;
-                    .cv-btn {
-                        // background-color: rgb(255, 230, 0);
-                        color: #000;
-                        border: none;
-                        position: relative;
-                        top: 20px;
-                        z-index: 1;
-                    }
-                    .cv-btn::after {
-                        content: "";
-                        position: absolute;
-                        height: 100%;
-                        width: 110%;
-                        top: 0px;
-                        left: -8px;
-                        transform: skewX(15deg);
-                        background-color: rgb(255, 230, 0);
-                        box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
-                        z-index: -1;
-                    }
-                }
-            }
-        }
-    }
-    /* Intro End */
-    .quote {
-        user-select: none;
-        min-height: 40vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.hero__content {
+  max-width: 42rem;
+}
 
-        .quote-content{
-            margin: 40px 0;
-            padding: 20px 30px;
-            background-color: rgb(255, 230, 0);
-            box-shadow: 15px 10px 0px rgba(194, 194, 194, 0.562);
-            transform: skew(15deg);
-            h2 {
-                transform: skew(-15deg);
-                padding: 5px;
-                color: black;
-            }
-        }
-    }
-    /* About Me 1st Start */
-    .about-me {
-        background-image: url('../assets/images/Home/desk-black1980.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        min-height: 100vh;
-        margin: 0;
+.hero__eyebrow,
+.profile__eyebrow,
+.contact-cta__eyebrow {
+  display: inline-block;
+  margin: 0 0 1rem;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
 
-        .spacings{
-            margin-bottom: 60px;
-            padding:5px;
-        }
-        
-        .title {
-            user-select: none;
-            ::before {
-                content: '';
-                position: absolute;
-                top: -10px;
-                left: -15px;
-                width: 100%;
-                height: 100%;
-                background-color: rgb(216, 216, 216);
-                z-index: -1;
-            }
+.hero h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  letter-spacing: -0.08em;
+  line-height: 0.88;
+}
 
-            text-align: center;
-            margin: 0px auto 30px;
-            color: #000;
-            padding: 6px 15px;
-            background: rgb(255, 230, 0);
-            width: fit-content;
-            box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
-            position: relative;
-        }
+.hero h1 span {
+  color: var(--color-accent);
+}
 
-        .about-me-content{
-            user-select: none;
-            min-height: 50vh;
-            .top-side {
-                width: 100%;
-                p {
-                    margin: auto;
-                    text-align: center;
-                    padding: 2px 5px;
-                    margin-bottom: 11px;
-                    color: #000;
-                    font-size: 1em;
-                    background-color:  rgb(255, 230, 0);
-                    width: fit-content;
-                    box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
-                    letter-spacing: 0.5px;
+.hero__role {
+  min-height: 1.4em;
+  margin: 1.4rem 0 0;
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  font-weight: 800;
+}
 
-                    span {
-                        font-weight: bold;
-                    }
-                }
-            }
-            .bottom-side {
-                text-align: center;
-                padding: 20px 0;
-                img {
-                    margin: 60px 0;
-                    height: 400px;
-                    width: 650px;
-                }
-            }
-        }
-    }
-    @media @tablet {
-        .about-me {
-            background-image: url('../assets/images/Home/desk-black800.png');
-        }
-    }
-    // About Me 1st End 
+.hero__summary {
+  max-width: 34rem;
+  margin: 1rem 0 0;
+  color: rgba(249, 250, 251, 0.76);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.7;
+}
 
-    // My Skills start
-    .skills {
-        min-height: 50vh;
-        padding-top: 40px;
-        .title {
-            user-select: none;
-            ::before {
-                content: '';
-                position: absolute;
-                top: -10px;
-                left: -15px;
-                width: 100%;
-                height: 100%;
-                background-color: rgb(216, 216, 216);
-                z-index: -1;
-            }
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
 
-            text-align: center;
-            margin: 0px auto 30px;
-            color: #000;
-            padding: 6px 15px;
-            background: rgb(255, 230, 0);
-            width: fit-content;
-            box-shadow: 10px 5px 0px rgba(194, 194, 194, 0.562);
-            position: relative;
-        }
-        .skill-content {
-            padding: 0px 0px 5vh;
-            width: 80%;
-            margin: auto;
-            .card {
-                border: 1px solid rgb(184, 184, 184);
-                margin: 20px 0px;
-                border-radius: 10px;
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-        }
-    }
-    // My Skills end
+.button {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.1rem;
+  padding: 0.75rem 1.1rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
 
-    // About me 2nd start 
-    .about-me2 {
-        background-image: url('../assets/images/Home/network-mainboard1980.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        user-select: none;
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        color: #000;
-        border-bottom: 1px solid rgba(223, 223, 223, 0.438);
-        .left-side {
-            width: 50%;
-            padding: 30px;
-            margin-left: 100px;
-            border-radius: 10px;
-            background-color: rgb(255, 255, 255);
-            box-shadow: 10px 10px 0px rgba(223, 223, 223, 0.438);
-            .top-side {
-                width: 100%;
-                text-align: left;
-                margin-bottom: 30px;
-                h2 {
-                    margin-bottom: 5px;
-                }
-                h3 {
-                    span {
-                        color: #000;
-                        padding: 2px;
-                        background-color: rgb(255, 230, 0);
-                        box-shadow: 4px 3px 0px rgba(194, 194, 194, 0.562);
-                    }
-                }
-            }
-            .middle-side {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                .box-right {
-                    margin-left: 10px;
-                }
-                .info {
-                    display: flex;
-                    border-bottom: 1px solid rgba(189, 189, 189, 0.432);
-                    padding: 10px 0px 20px;
-                    p {
-                        // margin-left: 5px;
-                        letter-spacing: .3px;
-                        span{
-                            font-weight: bold;
-                        }
-                    }
-                }
-            }
-            .bot-side {
-                text-align: left;
-                margin-top: 30px;
-                a {
-                    position: relative;
-                    
-                    ::before {
-                        content: "";
-                        position: absolute;
-                        top: 0px;
-                        left: 0px;
-                        width: 100%;
-                        height: 100%;
-                        background-color: rgb(28, 175, 224);
-                    }
-                    
-                    color: #000;
-                    margin: 0 5px;
-                    font-size: 32px;
-                    transition: .2s ease;
-                }
-                .fbook:hover {
-                    color: #3b5998;
-                    transition: .2s ease;
-                }
-                .git:hover {
-                    color: #211f1f;
-                    transition: .2s ease;
-                }
-                .lin:hover {
-                    color: #0077b5;
-                    transition: .2s ease;
-                }
-            }
-        }
-        .right-side {
-            width: 50%;
-            height: 100%;
-            .skewered {
-                margin: auto;
-                height: 500px;
-                img {
-                    height: 110%;
-                    // width: 100%;
-                    box-shadow:  15px 10px 0px rgba(194, 194, 194, 0.562);
-                }
-            }
-        }
-    }
-    @media @tablet {
-            
-        .about-me2 {
-            background-image: url('../assets/images/Home/network-mainboard800.png');
-            justify-content: center;
-            
-            .left-side {
-                width: 90%;
-                margin: 0px;
-            }
-            .right-side {
-                display:none;
-            }
-        }
-        
-    }
-    /* About me 2nd End */
+.button:hover {
+  box-shadow: var(--shadow-offset);
+  transform: translate(-4px, -4px);
+}
 
-    // Contact me start
-    .contact {
-        min-height: 40vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .contact-content {
-            width: 100%;
-            h3 {
-                color: #000;
-                margin: 10px 0;
-                // letter-spacing: .3px;
-                text-transform: uppercase;
-                span {
-                    color: #000;
-                    padding: 4px 5px;
-                    background-color: rgb(255, 230, 0);
-                    box-shadow: 8px 5px 0px rgba(194, 194, 194, 0.562);
-                }
-            }
-            // .line {
-            //     width: 100%;
-            //     border-bottom: 1px solid rgb(80, 80, 80);
-            //     height: 5vh;
-            // }
-            .btn{
-                margin-top: 20px;
-                padding-top: 5vh;
-                .contact-btn {
-                    ::before {
-                        content: "";
-                        position: absolute;
-                        left: 0px;
-                        top: -10px;
-                        height: 100%;
-                        width: 100%;
-                        background-color: grey;
-                    }
-                    cursor: pointer;
-                    position: relative;
-                    padding: 12px 2vw;
-                    text-decoration: none;
-                    font-weight: bold;
-                    transition: ease .5s;
-                    background-color: transparent;
-                    border: 2px solid #000;
-                    color: #000;
-                    border-radius: 3px;
-                }
-                .contact-btn:hover {
-                    background-color: rgb(255, 230, 0);
-                    color: #000;
-                    border: 2px solid rgb(255, 230, 0);
-                    box-shadow: 10px 6px 0px rgb(172, 172, 172);
-                }
-                .contact-btn::after {
-                    content: "";
-                    position: absolute;
-                    transition: ease .5s;
-                    border-radius: 3px;
-                    left: 0px;
-                    top: 0px;
-                    height: 100%;
-                    width: 100%;
-                    background-color: rgba(216, 216, 216, 0);
-                    z-index: -1;
-                }
-                .contact-btn:hover::after {
-                    left: -12px;
-                    top: -8px;
-                    background-color: rgb(216, 216, 216);
-                }
-            }
-        }
-    }
-    // Contact me end
+.button--accent {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.button--ghost {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--color-on-dark);
+}
+
+.button--ghost:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.button--dark {
+  background: var(--color-night);
+  color: var(--color-on-dark);
+}
+
+.hero__portrait-wrap {
+  position: relative;
+  width: min(100%, 28rem);
+  margin: 0 auto;
+}
+
+.hero__portrait {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  aspect-ratio: 0.82;
+  object-fit: cover;
+  clip-path: polygon(12% 0, 100% 0, 86% 100%, 0 100%);
+  filter: grayscale(0.22) contrast(1.06);
+}
+
+.hero__shape {
+  position: absolute;
+  inset: 1rem -0.4rem -1rem 0.4rem;
+  clip-path: polygon(12% 0, 100% 0, 86% 100%, 0 100%);
+}
+
+.hero__shape--back {
+  z-index: 0;
+  background: rgba(255, 255, 255, 0.38);
+  transform: translate(-1rem, -1rem);
+}
+
+.hero__shape--accent {
+  z-index: 1;
+  background: var(--color-accent);
+  transform: translate(0.65rem, 0.65rem);
+}
+
+.quote {
+  padding: clamp(3.5rem, 8vw, 7rem) 0;
+  background: var(--color-accent);
+}
+
+.quote blockquote {
+  max-width: 19ch;
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: -0.07em;
+  line-height: 0.96;
+}
+
+.section {
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.section--dark {
+  background: var(--color-night) url('../assets/images/Home/desk-black1980.png') center / cover no-repeat;
+}
+
+.about__grid,
+.profile__grid {
+  display: grid;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.about__detail {
+  max-width: 42rem;
+  color: rgba(249, 250, 251, 0.78);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.about__detail p {
+  margin: 0 0 1.2rem;
+}
+
+.about__detail strong {
+  color: var(--color-accent);
+}
+
+.about__brand {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  background: rgba(17, 19, 24, 0.65);
+  color: var(--color-on-dark);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.about__brand img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+.skills {
+  background: var(--color-surface);
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-height: 10rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+  box-shadow: 3px 3px 0 rgba(21, 24, 29, 0.1);
+  text-align: left;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.skill-card:hover {
+  box-shadow: var(--shadow-offset);
+  transform: translate(-4px, -4px);
+}
+
+.skill-card__title {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.skill-card__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-card__items li {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.experience {
+  background: var(--color-night-muted);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 0.55rem;
+  width: 2px;
+  background: var(--color-line);
+  content: '';
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.timeline__marker {
+  position: relative;
+  z-index: 1;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.4rem;
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  background: var(--color-night);
+  box-shadow: 0 0 0 4px rgba(255, 230, 0, 0.16);
+}
+
+.timeline__card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-paper);
+  box-shadow: 4px 4px 0 rgba(21, 24, 29, 0.14);
+}
+
+.timeline__header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.timeline__header h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  letter-spacing: -0.045em;
+}
+
+.timeline__company {
+  margin: 0.25rem 0 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.timeline__period {
+  flex: 0 0 auto;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-size: 0.76rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.timeline__highlights {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__highlights li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.timeline__highlights li::before {
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 2px;
+  background: var(--color-accent);
+  content: '';
+  transform: rotate(45deg);
+}
+
+.section--photo {
+  background: var(--color-night) url('../assets/images/Home/network-mainboard1980.png') center / cover no-repeat;
+}
+
+.profile__card {
+  align-self: center;
+  padding: clamp(1.4rem, 4vw, 3rem);
+  border-radius: var(--radius-lg);
+  background: var(--color-paper);
+  box-shadow: var(--shadow-offset);
+}
+
+.profile__card h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.profile__card > p:not(.profile__eyebrow) {
+  margin: 1.25rem 0 0;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.profile__details {
+  display: grid;
+  gap: 0.85rem;
+  margin: 2rem 0;
+}
+
+.profile__details div {
+  display: grid;
+  gap: 0.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.profile__details dt {
+  color: var(--color-text-muted);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile__details dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.profile__details a {
+  color: inherit;
+  text-decoration-color: var(--color-accent-deep);
+  text-decoration-thickness: 2px;
+}
+
+.profile__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.profile__socials a {
+  display: inline-grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-night);
+  color: var(--color-on-dark);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.profile__socials a:hover {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  transform: translateY(-3px);
+}
+
+.profile__hobbies {
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.profile__hobbies strong {
+  color: var(--color-text);
+}
+
+.profile__image-wrap {
+  position: relative;
+  width: min(100%, 31rem);
+  margin: 0 auto;
+}
+
+.profile__image-wrap::after {
+  position: absolute;
+  z-index: 0;
+  right: -0.7rem;
+  bottom: -0.7rem;
+  width: 100%;
+  height: 100%;
+  background: var(--color-accent);
+  content: '';
+  transform: skewX(-5deg);
+}
+
+.profile__image-wrap img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 0.84;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  filter: grayscale(0.15);
+}
+
+.contact-cta {
+  background: var(--color-accent);
+}
+
+.contact-cta__inner {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.contact-cta__eyebrow {
+  color: var(--color-text-muted);
+}
+
+.contact-cta h2 {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
+@media (min-width: 48rem) {
+  .hero__layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.7fr);
+  }
+
+  .hero__portrait-wrap {
+    justify-self: end;
+  }
+
+  .about__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    align-items: start;
+  }
+
+  .profile__grid {
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.82fr);
+    align-items: center;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 33rem) {
+  .hero {
+    min-height: 42rem;
+  }
+
+  .hero__overlay {
+    background: linear-gradient(90deg, rgba(10, 11, 14, 0.9), rgba(10, 11, 14, 0.48));
+  }
+
+  .hero__portrait-wrap {
+    width: min(78vw, 19rem);
+  }
+
+  .contact-cta__inner {
+    flex-direction: column;
+  }
+
+  .contact-cta__inner .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__role {
+    transition: none;
+  }
+}
 </style>

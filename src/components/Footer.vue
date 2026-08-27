@@ -1,105 +1,146 @@
 <template>
-    <div class="footer-content">
-        <div class="logo">
-            <h1>Chase</h1>
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="site-footer__grid">
+        <div class="site-footer__intro">
+          <router-link class="site-footer__brand" :to="{ name: 'Home' }">CHASE</router-link>
+          <p>Software engineer building practical, interactive experiences from Quezon City, Philippines.</p>
         </div>
-        <div class="nav-bar">
-            <div class="left-side links">
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>Item 4</li>
-                    <li>Item 5</li>
-                </ul>
-            </div>
-            <div class="middle-side links">
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>Item 4</li>
-                    <li>Item 5</li>
-                </ul>
-            </div>
-            <div class="right-side links">
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>Item 4</li>
-                    <li>Item 5</li>
-                </ul>
-            </div>
+
+        <div class="site-footer__group">
+          <h2>Explore</h2>
+          <router-link :to="{ name: 'Home' }">Home</router-link>
+          <router-link :to="{ name: 'Project' }">Projects</router-link>
+          <router-link :to="{ name: 'Contact' }">Contact</router-link>
         </div>
-        <div class="copyrights">
-            <p>&#169; 2021 copyright all right reserved</p>
+
+        <div class="site-footer__group">
+          <h2>Connect</h2>
+          <a href="mailto:chase.hermosisima@gmail.com">Email Chase</a>
+          <a href="https://chaseweb101.netlify.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+          <a href="https://github.com/mrchaser24" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/chase-arcus-hermosisima-2a13141ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>© {{ currentYear }} Chase Arcos Hermosisima. All rights reserved.</p>
+        <a href="mailto:chase.hermosisima@gmail.com">Let’s work together <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+      </div>
     </div>
+  </footer>
 </template>
 
 <script>
-
+export default {
+  name: 'Footer',
+  computed: {
+    currentYear() {
+      return new Date().getFullYear();
+    },
+  },
+};
 </script>
 
-<style lang="less" scoped>
-    .footer-content {
-        user-select: none;
-        padding: 20px;
-        background: rgb(39, 39, 39);
-        // position: absolute;
-        // bottom: 0;
-        // left: 0;
-        min-width: 100%;
-        .logo {
-            text-align: center;
-            width: fit-content;
-            margin: auto;
-            h1{
-                font-size: 64px;
-                margin: 10px 0 20px;
-                color: #fff;
-                text-shadow: -2px 2px 2px rgb(22, 22, 22);
-                text-transform: uppercase;
-                position: relative;
-                z-index: 10;
-            }
-            h1::before {
-                content: "";
-                position: absolute;
-                width: 110%;
-                height: 100%;
-                left: -8px;
-                top: 0;
-                background: rgb(255, 230, 0);
-                box-shadow: 15px 10px 0px rgba(194, 194, 194, 0.562);
-                transition: ease .2s;
-                z-index: -1;
-                transform: skewX(20deg);
-            }
-        }
-        .nav-bar{
-            display: flex;
-            justify-content: space-evenly;
-            color: #fff;
-            .links ul{
-                margin:0;
-                padding:0;
-                li{
-                    list-style: none;
-                    cursor: pointer;
-                    margin: 5px 0;
-                }
-            }
-        }
-        .copyrights {
-            margin-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.041);
-            p{
-                color: #fff;
-                margin: 0;
-                margin-top: 20px;
-            }
-        }
-    }
+<style scoped>
+.site-footer {
+  padding: clamp(3rem, 7vw, 6rem) 0 1.25rem;
+  background: var(--color-night);
+  color: var(--color-on-dark);
+}
+
+.site-footer__grid {
+  display: grid;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.site-footer__intro {
+  max-width: 24rem;
+}
+
+.site-footer__brand {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--color-on-dark);
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.1em;
+  line-height: 0.9;
+  text-decoration: none;
+}
+
+.site-footer__brand::before {
+  position: absolute;
+  z-index: -1;
+  right: -0.15rem;
+  bottom: 0.25rem;
+  left: -0.35rem;
+  height: 0.7rem;
+  background: var(--color-accent);
+  box-shadow: 6px 6px 0 rgba(255, 255, 255, 0.22);
+  content: '';
+  transform: skewX(-14deg);
+}
+
+.site-footer p {
+  margin: 0;
+  color: rgba(249, 250, 251, 0.65);
+  line-height: 1.7;
+}
+
+.site-footer__group {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+}
+
+.site-footer__group h2 {
+  margin: 0 0 0.45rem;
+  color: var(--color-accent);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-footer__group a,
+.site-footer__bottom a {
+  color: rgba(249, 250, 251, 0.78);
+  text-decoration: none;
+}
+
+.site-footer__group a:hover,
+.site-footer__bottom a:hover {
+  color: var(--color-accent);
+}
+
+.site-footer__bottom {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.82rem;
+}
+
+.site-footer__bottom a {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
+@media (min-width: 44rem) {
+  .site-footer__grid {
+    grid-template-columns: minmax(18rem, 1.8fr) 1fr 1fr;
+  }
+}
+
+@media (max-width: 34rem) {
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
 </style>

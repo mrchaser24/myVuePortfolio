@@ -5,102 +5,115 @@ Vue.use(Vuex);
 
 const projList = [
     {
-        id_proj:1,
-        title: "PanOptik Digital Marketing Inc.",
-        description: "A digital marketing inc that helps a business get up and running",
-        tools: "HTML5, CSS3, JS, Bootstrap",
-        projImg:  require('@/assets/images/Project/ProjectLogo/panoptik.jpg'),
+        id: 1,
+        title: 'PanOptik Digital Marketing Inc.',
+        description: 'A digital marketing team helping businesses build a clear, effective online presence.',
+        stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+        image: require('@/assets/images/Project/ProjectLogo/panoptik.jpg'),
+        imageAlt: 'PanOptik Digital Marketing Inc. project preview',
     },
     {
-        id_proj:2,
-        title: "Karwaheng Pinoy",
-        description: "A delivery app that is similar to Grab and Lalamove",
-        tools: "HTML5, CSS3, JS, Bootstrap",
-        projImg:  require('@/assets/images/Project/ProjectLogo/logoyellowbg.jpg'),
-    },
-    {
-        id_proj:3,
-        title: "TEST 1",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, nesciunt cupiditate iusto deserunt fugiat maiores voluptatum fugit commodi nihil neque nulla, adipisci doloremque, pariatur sequi!",
-        tools: "Vue 2",
-        projImg:  require('@/assets/images/Project/ProjectLogo/tkdslide1.jpg'),
-    },
-    {
-        id_proj:4,
-        title: "TEST 2",
-        description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, nesciunt cupiditate iusto deserunt fugiat maiores voluptatum fugit commodi nihil neque nulla, adipisci doloremque, pariatur sequi!",
-        tools: "Laravel",
-        projImg: require('@/assets/images/Project/ProjectLogo/tkdslide1.jpg'),
+        id: 2,
+        title: 'Karwaheng Pinoy',
+        description: 'A delivery-app concept inspired by the convenience of services such as Grab and Lalamove.',
+        stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
+        image: require('@/assets/images/Project/ProjectLogo/logoyellowbg.jpg'),
+        imageAlt: 'Karwaheng Pinoy project preview',
     },
 ];
 
 const skillCard = [
     {
-        id:1,
-        name:"HTML",
-        imgSrc: require('@/assets/images/Home/my-skills/HTML.png'),
-        desc:"<p>75</p><p>Lorem ipsum dolor sit amet.</p>",
+        id: 1,
+        name: 'Front-end Development',
+        items: ['JavaScript', 'VueJS', 'ReactJS', 'TypeScript', 'Git', 'CSS', 'LESS', 'Vuetify'],
     },
     {
-        id:2,
-        name:"CSS",
-        imgSrc: require('@/assets/images/Home/my-skills/CSS.png'),
-        desc:"<p>75</p>",
+        id: 2,
+        name: 'Back-end Development',
+        items: ['Laravel', 'GitLab CI/CD', 'Docker', 'MySQL'],
     },
     {
-        id:3,
-        name:"JavaScript",
-        imgSrc: require('@/assets/images/Home/my-skills/JavaScript.png'),
-        desc:"<p>60</p>",
+        id: 3,
+        name: 'Quality Assurance',
+        items: ['Web Application QA'],
     },
     {
-        id:4,
-        name:"TypeScript",
-        imgSrc: require('@/assets/images/Home/my-skills/TypeScript.png'),
-        desc:"<p>60</p>",
+        id: 4,
+        name: 'Game Development',
+        items: ['Unity Engine', 'C#'],
     },
     {
-        id:5,
-        name:"VueJS",
-        imgSrc: require('@/assets/images/Home/my-skills/VueJS.png'),
-        desc:"<p>50</p>",
+        id: 5,
+        name: 'Technical Support',
+        items: ['Computer basic troubleshooting'],
+    },
+];
+
+const experienceList = [
+    {
+        id: 1,
+        company: 'Collabera – Essilor',
+        location: 'Alabang, Muntinlupa City',
+        role: 'Senior Analyst Programmer',
+        period: 'Sept 2022 – Present',
+        highlights: [
+            'Created data models to support decision-making processes.',
+            'Developed comprehensive risk management strategies to minimize potential losses and safeguard business interests.',
+            'Utilized data visualization techniques to present and explain complex data sets.',
+            'Generated ad-hoc reports to evaluate specific business requirements.',
+            'Investigated system issues and implemented resolutions to reduce downtime.',
+            'Optimized core processes to improve business performance and operational agility.',
+        ],
     },
     {
-        id:6,
-        name:"Less",
-        imgSrc: require('@/assets/images/Home/my-skills/Less.png'),
-        desc:"<p>50</p>",
+        id: 2,
+        company: 'Teknovarik Inc.',
+        location: 'Valenzuela City',
+        role: 'Fullstack Developer, Project Support, DevOps',
+        period: 'Jun 2021 – Sept 2022',
+        highlights: [
+            'Built interactive prototypes for client approval using wireframing tools such as Corel.',
+            'Optimized web applications for speed, scalability, and security.',
+            'Reduced load times by optimizing images, code minification, and implementing caching techniques.',
+            'Worked closely with UX/UI designers to translate complex designs into functional web pages.',
+            'Spearheaded production of page content such as visuals and text copy to meet project specifications.',
+            'Maintained consistency in branding across multiple platforms by developing reusable UI components.',
+        ],
     },
     {
-        id:7,
-        name:"MySQL",
-        imgSrc: require('@/assets/images/Home/my-skills/MySQL.png'),
-        desc:"<p>40</p>",
+        id: 3,
+        company: 'AYX Technologies',
+        location: 'Mainland, China',
+        role: 'Front-end Developer',
+        period: 'Jan 2019 – Apr 2021',
+        highlights: [
+            'Enhanced user experience by implementing responsive web designs for seamless browsing across devices.',
+            'Designed intuitive user interfaces through close collaboration with UX designers, increasing user satisfaction.',
+            'Optimized web applications for speed, scalability, and security.',
+            'Developed user-friendly web forms with validation and error handling.',
+        ],
     },
     {
-        id:8,
-        name:"Express",
-        imgSrc: require('@/assets/images/Home/my-skills/ExpressJS.png'),
-        desc:"<p>30</p>",
-    },
-    {
-        id:9,
-        name:"PHP",
-        imgSrc: require('@/assets/images/Home/my-skills/PHP.png'),
-        desc:"<p>30</p>",
-    },
-    {
-        id:10,
-        name:"Laravel",
-        imgSrc: require('@/assets/images/Home/my-skills/Laravel.png'),
-        desc:"<p>10</p>",
+        id: 4,
+        company: 'Freelance',
+        location: 'Remote',
+        role: 'Front-end Developer',
+        period: 'Jan 2018 – Dec 2020',
+        highlights: [
+            'Developed user-oriented visuals and features using front-end languages to increase site traffic.',
+            'Reviewed code to validate structures, assess security, and verify browser and device compatibility.',
+            'Engaged with clients to plan and optimize site issues and queries.',
+            'Planned and engineered RESTful web services to manipulate dynamic datasets.',
+        ],
     },
 ];
 
 export default new Vuex.Store({
     state: {
         projectsList: projList,
-        skillList: skillCard
+        skillList: skillCard,
+        experienceList: experienceList
     },
     getters: {
         getProjectList(state){
@@ -108,6 +121,9 @@ export default new Vuex.Store({
         },
         getSkillList(state){
             return state.skillList;
+        },
+        getExperienceList(state){
+            return state.experienceList;
         },
     },
     mutations: {},
