@@ -20,7 +20,11 @@
 
         <article v-for="project in getProjectList" :key="project.id" class="project-card" data-aos="fade-up">
           <div class="project-card__image-wrap">
-            <img :src="project.image" :alt="project.imageAlt" />
+            <img v-if="project.image" :src="project.image" :alt="project.imageAlt" />
+            <div v-else class="project-card__placeholder" aria-hidden="true">
+              <i class="fas fa-image"></i>
+              <span>Preview coming soon</span>
+            </div>
           </div>
           <div class="project-card__content">
             <p class="project-card__index">0{{ project.id }}</p>
@@ -29,6 +33,9 @@
             <ul class="project-card__stack" aria-label="Technology stack">
               <li v-for="tool in project.stack" :key="tool">{{ tool }}</li>
             </ul>
+            <a v-if="project.link" class="project-card__link" :href="project.link" target="_blank" rel="noopener noreferrer">
+              Visit project <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
           </div>
         </article>
       </div>
@@ -166,6 +173,27 @@ export default {
   transform: scale(1.04);
 }
 
+.project-card__placeholder {
+  display: flex;
+  min-height: 17rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  color: rgba(249, 250, 251, 0.55);
+}
+
+.project-card__placeholder i {
+  font-size: 2.5rem;
+}
+
+.project-card__placeholder span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .project-card__content {
   display: flex;
   flex-direction: column;
@@ -196,6 +224,15 @@ export default {
   line-height: 1.7;
 }
 
+@media (min-width: 48rem) {
+  .project-card__content > p:not(.project-card__index) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+}
+
 .project-card__stack {
   display: flex;
   flex-wrap: wrap;
@@ -212,6 +249,26 @@ export default {
   background: var(--color-surface);
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+.project-card__link {
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: auto;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.project-card__link:hover {
+  box-shadow: var(--shadow-offset);
+  transform: translate(-3px, -3px);
 }
 
 .projects-cta {
@@ -267,7 +324,7 @@ export default {
 @media (min-width: 48rem) {
   .project-card {
     grid-template-columns: minmax(16rem, 0.85fr) minmax(0, 1fr);
-    min-height: 26rem;
+    height: 27rem;
   }
 
   .project-card:nth-of-type(odd) .project-card__image-wrap {
@@ -279,7 +336,8 @@ export default {
   }
 
   .project-card__image-wrap,
-  .project-card__image-wrap img {
+  .project-card__image-wrap img,
+  .project-card__placeholder {
     min-height: 100%;
   }
 }
