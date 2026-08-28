@@ -91,7 +91,7 @@ const skillCard = [
 const experienceList = [
     {
         id: 1,
-        company: 'Collabera – Essilor',
+        company: 'Ascendion – Essilor',
         location: 'Alabang, Muntinlupa City',
         role: 'Senior Analyst Programmer',
         period: 'Sept 2022 – Aug 2026',
